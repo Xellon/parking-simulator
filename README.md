@@ -21,11 +21,11 @@ Scrum thingy https://ide.vgtu.lt (reik VPN)
 
 
 **Programavimo guidelines:**  
-	Pavadinimai:  
-		Kintamųjų 	- example_name  
-		Objektų 	- kaip kintamasis  
-		Klasių		- ExampleName  
-		Funkcijų	- exampleName()  
+	* Pavadinimai:  
+		* Kintamųjų 	- example_name  
+		* Objektų 	- kaip kintamasis  
+		* Klasių		- ExampleName  
+		* Funkcijų	- exampleName()  
 	Visi pavadinimai turi būt aiškūs, jei naudojat sutrumpinimus, tai visiem žinomus  
 	Komentarus dėkit, jei manot, kad kitas žmogus, skaitantis kodą, nieko nesupras, geriausia būtų klasės pradžioj trumpai būtų parašyta, ką ji daro, ir kur naudojama  
 
