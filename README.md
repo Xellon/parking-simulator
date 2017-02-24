@@ -3,24 +3,24 @@ Php servas XAMPP https://www.apachefriends.org/index.html
 Testavimui Yii framework http://www.yiiframework.com/  
 Scrum thingy https://ide.vgtu.lt (reik VPN)  
 
-Pozicijos:  
-	Dizaineris - Elonas  
-	Projektuotojas - Elonas  
-	Level design -  
-	Front-end :  
-		CSS + HTML -  
-		JavaScript - Viktor Nedelko (Jei prireiks)  
-	Back-end :  
-	apjungimas su duombaze -  
-	kodavimas/šifravimas(jei prireiks) - Elonas  
-	logika (jei prireiks) - Elonas  
-	Duombazių programuotojas - Viktor Nedelko. (Savo noru)  
-	Testuotojas - Viktor Nedelko (Jei prireiks)  
-	Diegėjas (idėt į host ir pan.) -  
-	Saugumo spec(nžn, gal čia overkill) -  
+* **Pozicijos:**  
+	* Dizaineris - Elonas  
+	* Projektuotojas - Elonas  
+	* Level design -  
+	* Front-end :  
+		* CSS + HTML -  
+		* JavaScript - Viktor Nedelko (Jei prireiks)  
+	* Back-end :  
+	* apjungimas su duombaze -  
+	* kodavimas/šifravimas(jei prireiks) - Elonas  
+	* logika (jei prireiks) - Elonas  
+	* Duombazių programuotojas - Viktor Nedelko. (Savo noru)  
+	* Testuotojas - Viktor Nedelko (Jei prireiks)  
+	* Diegėjas (idėt į host ir pan.) -  
+	* Saugumo spec(nžn, gal čia overkill) -  
 
 
-Programavimo guidelines:  
+**Programavimo guidelines:**  
 	Pavadinimai:  
 		Kintamųjų 	- example_name  
 		Objektų 	- kaip kintamasis  
@@ -30,7 +30,7 @@ Programavimo guidelines:
 	Komentarus dėkit, jei manot, kad kitas žmogus, skaitantis kodą, nieko nesupras, geriausia būtų klasės pradžioj trumpai būtų parašyta, ką ji daro, ir kur naudojama  
 
 
-“Parkavimo simuliatorius”  
+**“Parkavimo simuliatorius”**  
 
 Žaidimukas/simuliacija, kuri lavina parkingo įgūdžius su įvairiom mašinom, aikštelėm ar situacijom.  
 
