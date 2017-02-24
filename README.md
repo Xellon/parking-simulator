@@ -2,7 +2,7 @@
 
 Php servas XAMPP https://www.apachefriends.org/index.html  
 Testavimui Yii framework http://www.yiiframework.com/  
-Scrum thingy https://ide.vgtu.lt (reik VPN)  
+Scrum thingy https://ide.vgtu.lt (reik VPN) arba [link](https://trello.com/b/HUDzjuqU/kursinis)
 
 * **Pozicijos:**  
 	* Dizaineris - Elonas  
