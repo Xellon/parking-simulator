@@ -1,23 +1,23 @@
 # parking-simulator
-Php servas XAMPP https://www.apachefriends.org/index.html
-Testavimui Yii framework http://www.yiiframework.com/
-Scrum thingy https://ide.vgtu.lt (reik VPN)
+*Php servas XAMPP https://www.apachefriends.org/index.html
+*Testavimui Yii framework http://www.yiiframework.com/
+*Scrum thingy https://ide.vgtu.lt (reik VPN)
 
-Pozicijos:
-Dizaineris - Elonas
-Projektuotojas - Elonas
-Level design - 
-Front-end :
-	CSS + HTML -
-	JavaScript - Viktor Nedelko (Jei prireiks)
-Back-end :
-apjungimas su duombaze -
-kodavimas/šifravimas(jei prireiks) - Elonas
-logika (jei prireiks) - Elonas
-Duombazių programuotojas - Viktor Nedelko. (Savo noru)
-Testuotojas - Viktor Nedelko (Jei prireiks)
-Diegėjas (idėt į host ir pan.) -
-Saugumo spec(nžn, gal čia overkill) - 
+* Pozicijos:
+* Dizaineris - Elonas
+* Projektuotojas - Elonas
+* Level design - 
+* Front-end :
+	* CSS + HTML -
+	* JavaScript - Viktor Nedelko (Jei prireiks)
+* Back-end :
+* apjungimas su duombaze -
+* kodavimas/šifravimas(jei prireiks) - Elonas
+* logika (jei prireiks) - Elonas
+* Duombazių programuotojas - Viktor Nedelko. (Savo noru)
+* Testuotojas - Viktor Nedelko (Jei prireiks)
+* Diegėjas (idėt į host ir pan.) -
+* Saugumo spec(nžn, gal čia overkill) - 
 
 
 
