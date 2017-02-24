@@ -1,4 +1,5 @@
-# parking-simulator
+# Parking Simulator  
+
 Php servas XAMPP https://www.apachefriends.org/index.html  
 Testavimui Yii framework http://www.yiiframework.com/  
 Scrum thingy https://ide.vgtu.lt (reik VPN)  
