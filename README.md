@@ -28,6 +28,8 @@
 		* Klasių - ExampleName  
 		* Funkcijų- exampleName()  
 	* Visi pavadinimai turi būt aiškūs, jei naudojat sutrumpinimus, tai visiem žinomus  
+	* Brackets dedam taip: {  
+	* }  
 	* Komentarus dėkit, jei manot, kad kitas žmogus, skaitantis kodą, nieko nesupras, geriausia būtų klasės pradžioj trumpai būtų parašyta, ką ji daro, ir kur naudojama  
 
 
