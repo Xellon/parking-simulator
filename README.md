@@ -1,8 +1,9 @@
 # Parking Simulator  
 
 [Php servas XAMPP](https://www.apachefriends.org/index.html)  
-[Testavimui Yii framework](http://www.yiiframework.com)  
-[Scrum thingy](https://ide.vgtu.lt) (reik VPN) arba [Trello](https://trello.com/b/HUDzjuqU/kursinis)
+[PHPStorm](https://www.jetbrains.com/student/)
+[Yii framework](http://www.yiiframework.com)  
+[Scrum thingy](https://ide.vgtu.lt) (reik VPN) 
 
 * **Pozicijos:**  
 	* Dizaineris - Elonas  
