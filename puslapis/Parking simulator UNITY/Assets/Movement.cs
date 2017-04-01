@@ -40,9 +40,9 @@ public class Movement : MonoBehaviour {
 
 
         if (Variables.steering_wheel > 0)
-            car.transform.RotateAround(car.transform.FindChild("RearL").position, Vector3.up, -rotation_speed);
+            car.transform.RotateAround(car.transform.FindChild("RatasRL").position, Vector3.up, -rotation_speed);
         if (Variables.steering_wheel < 0)
-            car.transform.RotateAround(car.transform.FindChild("RearR").position, Vector3.up, -rotation_speed);
+            car.transform.RotateAround(car.transform.FindChild("RatasRR").position, Vector3.up, -rotation_speed);
 
 
         if (Input.GetButton("Break")) {
