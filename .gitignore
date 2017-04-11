@@ -1,17 +1,12 @@
 # Unity folderiai, kuriu nereikia repozitorijoje
 
-# Jeigu jums vis tiek kils konfliktu su Build ir Library folderiais, atidarykite git shella ir iveskite:
-
+# Jeigu jums vis tiek kils konfliktu su Library folderiu, atidarykite git shella ir iveskite:
 # git rm -r --cached '.\puslapis\Parking simulator UNITY\Library\*'
-# git rm -r --cached '.\puslapis\Parking simulator UNITY\Build\*'
-
-# Sios komandos neistrins failu is kompo, bet nuims juos nuo git 'projekto'
+# Si komanda neistrins failu is kompo, bet nuims juos nuo git 'projekto'
 
 /puslapis/Parking simulator UNITY/[Ll]ibrary/
 /puslapis/Parking simulator UNITY/[Tt]emp/
 /puslapis/Parking simulator UNITY/[Oo]bj/
-/puslapis/Parking simulator UNITY/[Bb]uild/
-/puslapis/Parking simulator UNITY/[Bb]uilds/
 /puslapis/Parking simulator UNITY/Assets/AssetStoreTools*
 
 
