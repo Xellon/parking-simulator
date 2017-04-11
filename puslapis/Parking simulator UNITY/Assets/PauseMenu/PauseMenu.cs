@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
 
@@ -14,13 +15,14 @@ public class PauseMenu : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Return)) {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
             pausePress();
         }
     }
 
 
     public void pausePress() {
+        Cursor.visible = true;
         if (pause_langas.gameObject.activeInHierarchy == false) {
             pause_langas.gameObject.SetActive(true);
             Time.timeScale = 0;
@@ -33,18 +35,32 @@ public class PauseMenu : MonoBehaviour {
         }
     }
 
-    /* public void restartPress(){
+    public void resume(){
+        Cursor.visible = false;
+        Time.timeScale = 1;
+        pause_langas.gameObject.SetActive(false);
+        
+        player.GetComponent<FirstPersonController>().enabled = true;
+        
+    }
 
-     }*/
+    public void restart(){
+        SceneManager.LoadScene("test platform", LoadSceneMode.Additive);
 
+        Cursor.visible = false;
+        Time.timeScale = 1;
+    }
 
-    /*public void mainPress(){
-     
-    }*/
+    public void levelSelect(){
 
-    /*public void levelPress(){
+        Cursor.visible = false;
+        Time.timeScale = 1;
+    }
 
-    }*/
+    public void mainMenu() {
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
 
-
+        Cursor.visible = false;
+        Time.timeScale = 1;
+    }
 }
