@@ -4,10 +4,10 @@
 # git rm -r --cached '.\puslapis\Parking simulator UNITY\Library\*'
 # Si komanda neistrins failu is kompo, bet nuims juos nuo git 'projekto'
 
-"/puslapis/Parking simulator UNITY/[Ll]ibrary/"
-"/puslapis/Parking simulator UNITY/[Tt]emp/"
-"/puslapis/Parking simulator UNITY/[Oo]bj/"
-"/puslapis/Parking simulator UNITY/Assets/AssetStoreTools*"
+/puslapis/Parking simulator UNITY/[Ll]ibrary/
+/puslapis/Parking simulator UNITY/[Tt]emp/
+/puslapis/Parking simulator UNITY/[Oo]bj/
+/puslapis/Parking simulator UNITY/Assets/AssetStoreTools*
 
 
 
