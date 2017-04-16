@@ -29,8 +29,9 @@ public class Tiling : MonoBehaviour {
 
     private float delta_time = 0.0f;
 
-	// Use this for initialization
-	void Start () {
+    //**************************************************************************************************************************************************************
+
+    void Start () {
         tile_array = new Tile[100,100];
 
         for (int i = 0; i < 100; i++) {
@@ -42,9 +43,10 @@ public class Tiling : MonoBehaviour {
         car = GameObject.FindGameObjectWithTag("PlayerCar");
         tile = GameObject.Find("Tile");
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    //**************************************************************************************************************************************************************
+
+    void Update () {
         delta_time += Variables.delta_t;
         if (delta_time > 1) {
             delta_time = 0;
@@ -56,5 +58,7 @@ public class Tiling : MonoBehaviour {
             }
         }
 	}
+
+    //**************************************************************************************************************************************************************
 
 }

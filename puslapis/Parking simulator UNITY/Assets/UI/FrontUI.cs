@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 public class FrontUI : MonoBehaviour {
 
-    public Canvas frontUI;
+    public Canvas front_UI;
 
     private GameObject car;
 
     private Image steering_wheel;
+    private Image arrow_L;
+    private Image arrow_R;
     private Text wheel_text_L;
     private Text wheel_text_R;
     private Text wheel_speed;
@@ -20,22 +22,26 @@ public class FrontUI : MonoBehaviour {
 
     Vector3 last_pos;
 
-    // Use this for initialization
+    //**************************************************************************************************************************************************************
+
     void Start () {
         car = GameObject.FindGameObjectWithTag("PlayerCar");
         last_pos = car.transform.position;
 
-        frontUI = GetComponent<Canvas>();
+        front_UI = GetComponent<Canvas>();
         
-        steering_wheel = frontUI.transform.FindChild("SpriteWheel").GetComponent<Image>();
-        wheel_text_L = frontUI.transform.FindChild("TextWheelTurnR").GetComponent<Text>();
-        wheel_text_R = frontUI.transform.FindChild("TextWheelTurnL").GetComponent<Text>();
-        wheel_speed = frontUI.transform.FindChild("TextSpeed").GetComponent<Text>();
+        steering_wheel = front_UI.transform.FindChild("SpriteWheel").GetComponent<Image>();
+        arrow_L = front_UI.transform.FindChild("ArrowL").GetComponent<Image>();
+        arrow_R = front_UI.transform.FindChild("ArrowR").GetComponent<Image>();
+        wheel_text_L = front_UI.transform.FindChild("TextWheelTurnR").GetComponent<Text>();
+        wheel_text_R = front_UI.transform.FindChild("TextWheelTurnL").GetComponent<Text>();
+        wheel_speed = front_UI.transform.FindChild("TextSpeed").GetComponent<Text>();
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    //**************************************************************************************************************************************************************
+
+    void Update () {
         float speed = (car.transform.position - last_pos).magnitude / Variables.delta_t;
 
         rotation = Variables.steering_wheel;
@@ -48,8 +54,27 @@ public class FrontUI : MonoBehaviour {
 
         rotation = Mathf.Abs(Mathf.RoundToInt(rotation));
         
-        wheel_text_L.text = rotation.ToString() + '°';
-        wheel_text_R.text = rotation.ToString() + '°';
+        wheel_text_L.text = (rotation / 360).ToString();
+        wheel_text_R.text = (rotation / 360).ToString();
+
+        if (sprite_rotation == 0) {
+            arrow_L.gameObject.SetActive(false);
+            arrow_R.gameObject.SetActive(false);
+            wheel_text_L.gameObject.SetActive(true);
+            wheel_text_R.gameObject.SetActive(true);
+        }
+        else if (sprite_rotation < 0) {
+            arrow_L.gameObject.SetActive(false);
+            arrow_R.gameObject.SetActive(true);
+            wheel_text_L.gameObject.SetActive(false);
+            wheel_text_R.gameObject.SetActive(true);
+        }
+        else {
+            arrow_L.gameObject.SetActive(true);
+            arrow_R.gameObject.SetActive(false);
+            wheel_text_L.gameObject.SetActive(true);
+            wheel_text_R.gameObject.SetActive(false);
+        }
 
         wheel_speed.text = (int)(speed/3.6 * 10) + " Km/h";
 

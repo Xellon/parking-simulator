@@ -9,13 +9,15 @@ public class Movement : MonoBehaviour {
     private float delta_hold = 0.0f;
     private string mode = "Arcade";
 
-	// Use this for initialization
-	void Start () {
+    //**************************************************************************************************************************************************************
+
+    void Start () {
         car = gameObject;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    //**************************************************************************************************************************************************************
+
+    void Update () {
         if (Input.anyKeyDown) {
             delta_hold = 0;
         }
@@ -49,6 +51,7 @@ public class Movement : MonoBehaviour {
         }
         else if (mode == "Arcade") {
             rotation_speed = Input.GetAxis("Horizontal") * Variables.steering_speed  * (Variables.speed <= 1.0f ? Variables.speed : 1.0f);
+            Variables.steering_wheel = -rotation_speed;
             if (rotation_speed > 0)
                 car.transform.RotateAround(car.transform.FindChild("RatasRL").position, Vector3.up, -rotation_speed);
             if (rotation_speed < 0)
@@ -66,6 +69,8 @@ public class Movement : MonoBehaviour {
 
     }
 
+    //**************************************************************************************************************************************************************
+
     void slowDown(float rate) {
         if (Variables.speed > 0) {
             Variables.speed -= rate * Variables.delta_t;
@@ -79,4 +84,7 @@ public class Movement : MonoBehaviour {
         }
 
     }
+
+    //**************************************************************************************************************************************************************
+
 }
