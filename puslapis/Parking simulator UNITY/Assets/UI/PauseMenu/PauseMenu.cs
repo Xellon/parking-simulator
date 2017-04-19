@@ -61,6 +61,7 @@ public class PauseMenu : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     public void levelSelect(){
+        SceneManager.LoadScene(Variables.level_names[1], LoadSceneMode.Single);
 
         Cursor.visible = false;
         Time.timeScale = 1;
