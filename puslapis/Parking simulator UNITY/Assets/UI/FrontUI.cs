@@ -20,14 +20,11 @@ public class FrontUI : MonoBehaviour {
     private float delta_rotation = 0.0f;
     private float max_rotation = 2.0f;
 
-    Vector3 last_pos;
-
+    
     //**************************************************************************************************************************************************************
 
     void Start () {
         car = GameObject.FindGameObjectWithTag("PlayerCar");
-        last_pos = car.transform.position;
-
         front_UI = GetComponent<Canvas>();
         
         steering_wheel = front_UI.transform.FindChild("SpriteWheel").GetComponent<Image>();
@@ -42,10 +39,8 @@ public class FrontUI : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     void Update () {
-        float speed = (car.transform.position - last_pos).magnitude / Variables.delta_t;
 
         rotation = Variables.steering_wheel;
-
         rotation = rotation/max_rotation * 720 * 10;
 
         delta_rotation = sprite_rotation - rotation;
@@ -76,8 +71,6 @@ public class FrontUI : MonoBehaviour {
             wheel_text_R.gameObject.SetActive(false);
         }
 
-        wheel_speed.text = (int)(speed/3.6 * 10) + " Km/h";
-
-        last_pos = car.transform.position;
+        wheel_speed.text = (int)Variables.speed + " Km/h";
     }
 }
