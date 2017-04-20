@@ -7,6 +7,7 @@
 /puslapis/Parking simulator UNITY/[Ll]ibrary/
 /puslapis/Parking simulator UNITY/[Tt]emp/
 /puslapis/Parking simulator UNITY/[Oo]bj/
+/puslapis/Parking simulator UNITY/[Bb]uild/
 /puslapis/Parking simulator UNITY/Assets/AssetStoreTools*
 
 
@@ -34,3 +35,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+

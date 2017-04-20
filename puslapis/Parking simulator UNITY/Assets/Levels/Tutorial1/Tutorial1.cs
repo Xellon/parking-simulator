@@ -6,7 +6,7 @@ using UnityEngine;
 // (x) Load scene with camera from above (90 degrees?)
 // (x) Show a description of the tutorial + objectives and loop animation
 // (x) After you're done looking at animation press button to play
-// ( ) Replay animation from the menu
+// (x) Replay animation from the menu
 // ( ) Win condition when in collision box
 
 public class Tutorial1 : MonoBehaviour {
@@ -14,23 +14,30 @@ public class Tutorial1 : MonoBehaviour {
 	public Transform vehicle;
 
 	private Transform player;
-	private Transform initialPosition;
+
+    private Vector3 initialPos;
+    private Quaternion initialRot;
 
 	void Start () {
 		player = vehicle.gameObject.transform.Find("FPSController");
-	}
+
+        initialPos = vehicle.position;
+        initialRot = vehicle.rotation;
+
+        vehicle.GetComponent<Animation>().Play();
+    }
 
 	void Update () {
 		if (Input.anyKey)
 		{
-			vehicle.gameObject.SetActive(true);
-
-			vehicle.Translate(initialPosition.position);
-			//vehicle.Rotate(initialPosition.rotation);
+			player.gameObject.SetActive(true);
 
 			vehicle.GetComponent<Animation>().Stop();
 
-			this.gameObject.SetActive(false);
+            vehicle.position = initialPos;
+            vehicle.rotation = initialRot;
+
+            this.gameObject.SetActive(false);
 		}
 		
 	}
