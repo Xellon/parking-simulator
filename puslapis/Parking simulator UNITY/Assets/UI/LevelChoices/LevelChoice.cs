@@ -40,13 +40,19 @@ public class LevelChoice : MonoBehaviour {
                 if (!String.IsNullOrEmpty(Variables.level_names[id])) {
                     button.GetComponent<Button>().onClick.AddListener(() => { startLevel(id); });
 
-                    color.normalColor = new Color(0.8f, 0.8f, 0.9f, 1);
+                    //color.normalColor = new Color(0.8f, 0.8f, 0.9f, 1);
+                    button.transform.FindChild("Text").GetComponent<Text>().color = new Color32(0x00, 0x8C, 0xDF, 0xFF); //008CDFFF
+                    color.normalColor = Color.white;
+                    color.highlightedColor = new Color32(0xEE, 0xEE, 0xFF, 0xFF); //#8EDAFF41
+                    color.pressedColor = new Color32(0xDD, 0xDD, 0xDD, 0xFF); //00DFFF3C
                     button.GetComponent<Button>().colors = color;
 
                 }
                 else {
-                    color.normalColor = new Color(0.3f, 0.3f, 0.4f, 1);
-                    color.highlightedColor = new Color(0.2f, 0.2f, 0.3f, 1);
+                    button.transform.FindChild("Text").GetComponent<Text>().color = Color.white;
+                    color.normalColor = new Color32(0x00, 0x00, 0x19, 0x41); //#00001941
+                    color.highlightedColor = new Color32(0x00, 0x00, 0x00, 0x66); //#8EDAFF41
+                    color.pressedColor = new Color32(0x00, 0x00, 0x00, 0x66); //00DFFF3C
                     button.GetComponent<Button>().colors = color;
                 }
             }

@@ -13,8 +13,9 @@ public class Variables : MonoBehaviour {
     public static float steering_wheel = 0.0f; //Kampas, if kampas < 0 - kaire, else desine
     public static float steering_speed = 0.1f;
 
-    public static int current_level = 1;
-    public static string[] level_names = new string[10];
+    public static int current_level = 0;
+    public static int starting_level = 2; //Tutorial level
+    public static string[] level_names = new string[100];
     //public enum wheel{
     //    FRONT_L=0,
     //    FRONT_R=1,
@@ -24,10 +25,11 @@ public class Variables : MonoBehaviour {
 
     //**************************************************************************************************************************************************************
 
-    void Start () {
+    void Awake () {
         level_names[0] = "MainMenu";
-        level_names[1] = "Intro";
-        level_names[2] = "Tutorial1";
+        level_names[1] = "LevelChoices";
+        level_names[2] = "Intro";
+        level_names[3] = "Tutorial1";
     }
 
     //**************************************************************************************************************************************************************
