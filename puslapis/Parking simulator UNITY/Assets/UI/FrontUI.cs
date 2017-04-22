@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class FrontUI : MonoBehaviour {
 
-    public Canvas front_UI;
+    private Canvas front_UI;
 
     private GameObject car;
 
