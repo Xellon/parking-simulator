@@ -38,9 +38,9 @@ public class Movement_v2 : MonoBehaviour
         }
         else if (mode == "Arcade") {
             rotation_speed = Input.GetAxis("Horizontal") * Variables.steering_speed * (Variables.speed <= 6.0f ? Variables.speed : 6.0f);
-            Variables.steering_wheel = -rotation_speed;
-            wheel_colliders[3].steerAngle = sukimo_kampas * Variables.steering_wheel*-1.66f;
-            wheel_colliders[2].steerAngle = sukimo_kampas * Variables.steering_wheel*-1.66f;
+            Variables.steering_wheel = rotation_speed;
+            wheel_colliders[3].steerAngle = sukimo_kampas * Variables.steering_wheel*1.66f;
+            wheel_colliders[2].steerAngle = sukimo_kampas * Variables.steering_wheel*1.66f;
         }   
     }
    
