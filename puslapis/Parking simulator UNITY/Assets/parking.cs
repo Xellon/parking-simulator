@@ -7,13 +7,6 @@ public class parking : MonoBehaviour {
 	public Transform park;
 	private GameObject car;
 
-	private float delta_hold = 0.0f;
-
-	// Use this for initialization
-	void Start () {
-		car = GameObject.FindGameObjectsWithTag ("PlayerCar") [0];
-	}
-
 	void checkParking()
 	{
 		if ((park.transform.position.x <= carr.transform.position.x + 1) && (park.transform.position.x >= carr.transform.position.x - 1) && (park.transform.position.z <= carr.transform.position.z + 1) && (park.transform.position.z >= carr.transform.position.z - 1))
