@@ -12,6 +12,7 @@ using UnityEngine;
 public class Tutorial1 : MonoBehaviour {
 
 	public Transform vehicle;
+    public GameObject CarUI;
 
 	private Transform player;
 
@@ -31,6 +32,7 @@ public class Tutorial1 : MonoBehaviour {
 		if (Input.anyKey)
 		{
 			player.gameObject.SetActive(true);
+            CarUI.SetActive(true);
 
 			vehicle.GetComponent<Animation>().Stop();
 
