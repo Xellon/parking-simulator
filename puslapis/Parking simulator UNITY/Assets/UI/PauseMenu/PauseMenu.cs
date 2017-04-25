@@ -52,7 +52,9 @@ public class PauseMenu : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     public void restart(){
-        SceneManager.LoadScene(Variables.level_names[Variables.current_level], LoadSceneMode.Single);
+        int scene = SceneManager.GetActiveScene().buildIndex;
+
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
 
         Cursor.visible = false;
         Time.timeScale = 1;
