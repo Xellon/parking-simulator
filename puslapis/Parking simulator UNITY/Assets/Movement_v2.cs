@@ -52,7 +52,7 @@ public class Movement_v2 : MonoBehaviour
                 wheel_colliders[i].brakeTorque = 0;
                 if (Mathf.Abs(wheel_colliders[i].motorTorque) > 200)
                     wheel_colliders[i].motorTorque = -200 * Input.GetAxis("Vertical");
-                wheel_colliders[i].motorTorque -= 3+Input.GetAxis("Vertical") * Variables.acceleration * Variables.delta_t;
+                wheel_colliders[i].motorTorque -= 3*Input.GetAxis("Vertical") + Input.GetAxis("Vertical") * Variables.acceleration * Variables.delta_t;
             }
             else if (Input.GetAxis("Vertical") == 0) {
                     wheel_colliders[i].motorTorque = 0;
@@ -62,7 +62,6 @@ public class Movement_v2 : MonoBehaviour
                 wheel_colliders[i].motorTorque = 0;
                 wheel_colliders[i].brakeTorque = 0;
             }
-  
             if (Input.GetButton("Break"))
                 ratuStabdymas();
             else
