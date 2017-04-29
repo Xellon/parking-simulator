@@ -35,6 +35,7 @@ public class Practice : MonoBehaviour {
         gameObject.transform.FindChild("TextInstructionsBrake").gameObject.SetActive(false);
         gameObject.transform.FindChild("TextInstructionsLook").gameObject.SetActive(false);
         gameObject.transform.FindChild("TextInstructionsOtherMode").gameObject.SetActive(false);
+        gameObject.transform.FindChild("TextAnnouncement").gameObject.SetActive(false);
 
         //Function pointers
         tutorialCheck[0] = checkForLooking;
@@ -75,8 +76,10 @@ public class Practice : MonoBehaviour {
             tutorialDo[0]();
             this.with_tutorial = true;
         }
-        else
+        else {
             gameObject.transform.FindChild("Instructions").gameObject.SetActive(true);
+            gameObject.transform.FindChild("TextAnnouncement").gameObject.SetActive(true);
+        }
     }
 
     //**************************************************************************************************************************************************************
@@ -104,6 +107,7 @@ public class Practice : MonoBehaviour {
     public void tutorialFinish() {
         gameObject.transform.FindChild("TextInstructionsBrake").gameObject.SetActive(false);
         gameObject.transform.FindChild("Instructions").gameObject.SetActive(true);
+        gameObject.transform.FindChild("TextAnnouncement").gameObject.SetActive(true);
     }
 
     //**************************************************************************************************************************************************************
