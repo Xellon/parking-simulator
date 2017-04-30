@@ -22,6 +22,8 @@ public class Tutorial1 : MonoBehaviour {
 	void Start () {
 		player = vehicle.gameObject.transform.Find("FPSController");
 
+        CarUI.SetActive(false);
+
         initialPos = vehicle.position;
         initialRot = vehicle.rotation;
 
