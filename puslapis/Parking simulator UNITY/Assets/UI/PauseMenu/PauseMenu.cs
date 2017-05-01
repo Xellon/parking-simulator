@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
 
-    public Transform pause_langas;
-    public Transform player;
+    private Transform pause_langas;
+    private Transform player;
 
     //**************************************************************************************************************************************************************
 
     void Start() {
-       pause_langas.gameObject.SetActive(false);
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        pause_langas = transform.FindChild("PauseMenu");
+        pause_langas.gameObject.SetActive(false);
+
     }
 
     //**************************************************************************************************************************************************************

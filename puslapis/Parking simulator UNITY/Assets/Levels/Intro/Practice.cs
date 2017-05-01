@@ -5,7 +5,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class Practice : MonoBehaviour {
 
-    public Transform player;
+    private Transform player;
 
     private delegate bool actionCheck();
     private actionCheck[] tutorialCheck = new actionCheck[4];
@@ -28,6 +28,8 @@ public class Practice : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     void Start () {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+
         gameObject.transform.FindChild("IntroWindow").gameObject.SetActive(true);
         gameObject.transform.FindChild("Instructions").gameObject.SetActive(false);
 
@@ -35,12 +37,12 @@ public class Practice : MonoBehaviour {
         gameObject.transform.FindChild("TextInstructionsBrake").gameObject.SetActive(false);
         gameObject.transform.FindChild("TextInstructionsLook").gameObject.SetActive(false);
         gameObject.transform.FindChild("TextInstructionsOtherMode").gameObject.SetActive(false);
-        gameObject.transform.FindChild("TextAnnouncement").gameObject.SetActive(false);
 
         //Function pointers
         tutorialCheck[0] = checkForLooking;
         tutorialCheck[1] = checkForMoving;
         tutorialCheck[2] = checkForStopping;
+        tutorialCheck[3] = null;
 
         tutorialDo[0] = tutorialForLooking;
         tutorialDo[1] = tutorialForMoving;
@@ -78,7 +80,6 @@ public class Practice : MonoBehaviour {
         }
         else {
             gameObject.transform.FindChild("Instructions").gameObject.SetActive(true);
-            gameObject.transform.FindChild("TextAnnouncement").gameObject.SetActive(true);
         }
     }
 
@@ -107,7 +108,7 @@ public class Practice : MonoBehaviour {
     public void tutorialFinish() {
         gameObject.transform.FindChild("TextInstructionsBrake").gameObject.SetActive(false);
         gameObject.transform.FindChild("Instructions").gameObject.SetActive(true);
-        gameObject.transform.FindChild("TextAnnouncement").gameObject.SetActive(true);
+        with_tutorial = false;
     }
 
     //**************************************************************************************************************************************************************
