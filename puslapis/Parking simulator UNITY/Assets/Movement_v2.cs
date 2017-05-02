@@ -158,8 +158,9 @@ public class Movement_v2 : MonoBehaviour
     //**************************************************************************************************************************************************************
 
     void vairoSukimas() {
-          if (Mathf.Abs(Variables.steering_wheel) != 0.2f)
-                 vairas.transform.Rotate(Vector3.up * Input.GetAxis("Horizontal") * Variables.steering_speed *60f);
+        float x = Variables.delta_t / 0.0167f;
+        if (Mathf.Abs(Variables.steering_wheel) != 0.2f)
+                 vairas.transform.Rotate(Vector3.up * Input.GetAxis("Horizontal") * Variables.steering_speed *60f * x);
     }
 
 }
