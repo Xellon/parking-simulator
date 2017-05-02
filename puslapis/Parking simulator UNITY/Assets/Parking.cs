@@ -15,14 +15,12 @@ public class Parking : MonoBehaviour {
             parkCheck();
     }
     private void parkCheck () {
-        float car_kampas = Mathf.Round(masina.transform.eulerAngles.y) % 90;
-        float park_kampas = Mathf.Round(park.transform.eulerAngles.y) % 90;
-        if ((park.transform.position.x <= masina.transform.position.x + 0.3) && (park.transform.position.x >= masina.transform.position.x - 0.3) &&
+        if ((park.transform.position.x <= masina.transform.position.x + 0.3) && (park.transform.position.x >= masina.transform.position.x - 0.3) && 
             (park.transform.position.z <= masina.transform.position.z + 0.2) && (park.transform.position.z >= masina.transform.position.z - 0.2) &&
-            (car_kampas == park_kampas))
-            Debug.Log("Parked");
+            (masina.transform.rotation.y == park.transform.rotation.y)  )
+                Debug.Log("Parked");
         else
-            Debug.Log("Failed");
+                Debug.Log("Failed");
 	}
 
     private void OnCollisionEnter(Collision collision) {
