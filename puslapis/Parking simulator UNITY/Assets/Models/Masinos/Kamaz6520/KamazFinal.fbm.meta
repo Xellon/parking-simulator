@@ -12,8 +12,12 @@ timeCreated: 1492535421
 =======
 guid: 997dcde808ef55746991f857e50bb439
 folderAsset: yes
+<<<<<<< HEAD
 timeCreated: 1491991864
 >>>>>>> origin/julian
+=======
+timeCreated: 1492535421
+>>>>>>> develop
 licenseType: Free
 DefaultImporter:
   userData: 

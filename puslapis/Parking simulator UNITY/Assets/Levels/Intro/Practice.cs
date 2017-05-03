@@ -5,7 +5,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class Practice : MonoBehaviour {
 
-    public Transform player;
+    private Transform player;
 
     private delegate bool actionCheck();
     private actionCheck[] tutorialCheck = new actionCheck[4];
@@ -28,6 +28,8 @@ public class Practice : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     void Start () {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+
         gameObject.transform.FindChild("IntroWindow").gameObject.SetActive(true);
         gameObject.transform.FindChild("Instructions").gameObject.SetActive(false);
 
@@ -47,6 +49,7 @@ public class Practice : MonoBehaviour {
         tutorialCheck[0] = checkForLooking;
         tutorialCheck[1] = checkForMoving;
         tutorialCheck[2] = checkForStopping;
+        tutorialCheck[3] = null;
 
         tutorialDo[0] = tutorialForLooking;
         tutorialDo[1] = tutorialForMoving;
@@ -84,6 +87,7 @@ public class Practice : MonoBehaviour {
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         else
             gameObject.transform.FindChild("Instructions").gameObject.SetActive(true);
 =======
@@ -96,6 +100,11 @@ public class Practice : MonoBehaviour {
         else
             gameObject.transform.FindChild("Instructions").gameObject.SetActive(true);
 >>>>>>> origin/julian
+=======
+        else {
+            gameObject.transform.FindChild("Instructions").gameObject.SetActive(true);
+        }
+>>>>>>> develop
     }
 
     //**************************************************************************************************************************************************************
@@ -125,11 +134,15 @@ public class Practice : MonoBehaviour {
         gameObject.transform.FindChild("Instructions").gameObject.SetActive(true);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         gameObject.transform.FindChild("TextAnnouncement").gameObject.SetActive(true);
 >>>>>>> develop
 =======
 >>>>>>> origin/julian
+=======
+        with_tutorial = false;
+>>>>>>> develop
     }
 
     //**************************************************************************************************************************************************************

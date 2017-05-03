@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 guid: a749de52f2427c348813e93f4863c47b
 <<<<<<< HEAD
+<<<<<<< HEAD
 timeCreated: 1493493767
 licenseType: Free
 NativeFormatImporter:
@@ -10,6 +11,12 @@ timeCreated: 1492866170
 licenseType: Free
 NativeFormatImporter:
 >>>>>>> origin/julian
+=======
+timeCreated: 1493493767
+licenseType: Free
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+>>>>>>> develop
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -14,12 +14,17 @@ public class LevelChoice : MonoBehaviour {
 
     private int space = 50;
 <<<<<<< HEAD
+<<<<<<< HEAD
     public int rows;
     public int columns;
 =======
     private int rows;
     private int columns;
 >>>>>>> origin/julian
+=======
+    public int rows;
+    public int columns;
+>>>>>>> develop
     //**************************************************************************************************************************************************************
 
     void Start () {
@@ -27,17 +32,23 @@ public class LevelChoice : MonoBehaviour {
 
         button_size = new Vector2(template.GetComponent<RectTransform>().rect.width, template.GetComponent<RectTransform>().rect.height);
 <<<<<<< HEAD
+<<<<<<< HEAD
         //rows = 3; //(int)(Screen.width / button_size.x + space);
         //columns = 8; //(int)((Screen.height - 300) / button_size.y + space);
 =======
         rows = 3;//(int)(Screen.width / button_size.x + space);
         columns = 8;//(int)((Screen.height - 300) / button_size.y + space);
 >>>>>>> origin/julian
+=======
+        //rows = 3; //(int)(Screen.width / button_size.x + space);
+        //columns = 8; //(int)((Screen.height - 300) / button_size.y + space);
+>>>>>>> develop
         float left = (Screen.width - columns * (button_size.x + space) + button_size.x) / 2;
         float top = (Screen.height - rows * (button_size.y + space) + button_size.x) / 2;
 
         Debug.Log(Screen.width + "x" + Screen.height);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         int button_count = 0;
 
@@ -49,14 +60,22 @@ public class LevelChoice : MonoBehaviour {
 
                 int id = button_count + Variables.starting_level;
 =======
+=======
+        int button_count = 0;
+
+>>>>>>> develop
         for (int y = 0; y < rows; y++) {
             for (int x = 0; x < columns; x++) {
                 GameObject button = Instantiate(template, new Vector3(left + x * (button_size.x + space), top + y * (button_size.y + space)), new Quaternion(), gameObject.transform);
-                button.name = "ButtonLevel" + y * rows + x;
-                button.transform.FindChild("Text").GetComponent<Text>().text = (y * rows + x).ToString();
+                button.name = "ButtonLevel" + button_count;
+                button.transform.FindChild("Text").GetComponent<Text>().text = (button_count).ToString();
 
+<<<<<<< HEAD
                 int id = y * rows + x + Variables.starting_level;
 >>>>>>> origin/julian
+=======
+                int id = button_count + Variables.starting_level;
+>>>>>>> develop
                 ColorBlock color = button.GetComponent<Button>().colors;
 
                 if (!String.IsNullOrEmpty(Variables.level_names[id])) {
@@ -78,10 +97,15 @@ public class LevelChoice : MonoBehaviour {
                     button.GetComponent<Button>().colors = color;
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                 button_count++;
 =======
 >>>>>>> origin/julian
+=======
+
+                button_count++;
+>>>>>>> develop
             }
         }
         background = transform.FindChild("Background");

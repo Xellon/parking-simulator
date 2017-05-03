@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿Shader "FX/MirrorReflection"
 =======
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
@@ -11,6 +12,11 @@ Shader "FX/MirrorReflection"
 
 Shader "FX/MirrorReflection"
 >>>>>>> origin/julian
+=======
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "FX/MirrorReflection"
+>>>>>>> develop
 {
 	Properties
 	{
@@ -39,6 +45,7 @@ Shader "FX/MirrorReflection"
 		v2f o;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		o.pos = mul(UNITY_MATRIX_MVP, pos);
 =======
 		o.pos = UnityObjectToClipPos(pos);
@@ -46,6 +53,9 @@ Shader "FX/MirrorReflection"
 =======
 		o.pos = UnityObjectToClipPos(pos);
 >>>>>>> origin/julian
+=======
+		o.pos = UnityObjectToClipPos(pos);
+>>>>>>> develop
 		o.uv = TRANSFORM_TEX(uv, _MainTex);
 		o.refl = ComputeScreenPos(o.pos);
 		return o;

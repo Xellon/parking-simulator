@@ -2,10 +2,14 @@ fileFormatVersion: 2
 guid: 0d94bc56bde2f7f4f9db4cb1bc2993f8
 folderAsset: yes
 <<<<<<< HEAD
+<<<<<<< HEAD
 timeCreated: 1492535066
 =======
 timeCreated: 1491991864
 >>>>>>> origin/julian
+=======
+timeCreated: 1492535066
+>>>>>>> develop
 licenseType: Free
 DefaultImporter:
   userData: 

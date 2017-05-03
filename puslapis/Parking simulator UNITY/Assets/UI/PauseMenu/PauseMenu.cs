@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
 
-    public Transform pause_langas;
-    public Transform player;
+    private Transform pause_langas;
+    private Transform player;
 
     //**************************************************************************************************************************************************************
 
     void Start() {
-       pause_langas.gameObject.SetActive(false);
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        pause_langas = transform.FindChild("PauseMenu");
+        pause_langas.gameObject.SetActive(false);
+
     }
 
     //**************************************************************************************************************************************************************
@@ -54,6 +57,7 @@ public class PauseMenu : MonoBehaviour {
     public void restart(){
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         SceneManager.LoadScene(Variables.level_names[Variables.current_level], LoadSceneMode.Single);
 =======
         int scene = SceneManager.GetActiveScene().buildIndex;
@@ -63,6 +67,11 @@ public class PauseMenu : MonoBehaviour {
 =======
         SceneManager.LoadScene(Variables.level_names[Variables.current_level], LoadSceneMode.Single);
 >>>>>>> origin/julian
+=======
+        int scene = SceneManager.GetActiveScene().buildIndex;
+
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+>>>>>>> develop
 
         Cursor.visible = false;
         Time.timeScale = 1;
