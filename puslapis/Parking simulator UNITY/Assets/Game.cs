@@ -24,18 +24,28 @@ public class Game : MonoBehaviour {
         Variables.delta_t = Time.deltaTime;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
         //Do saving 
 >>>>>>> develop
+=======
+        //Do saving 
+>>>>>>> origin/julian
     }
 
     //**************************************************************************************************************************************************************
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     void getInfo() {
 
     }
 >>>>>>> develop
+=======
+    void getInfo() {
+
+    }
+>>>>>>> origin/julian
 }

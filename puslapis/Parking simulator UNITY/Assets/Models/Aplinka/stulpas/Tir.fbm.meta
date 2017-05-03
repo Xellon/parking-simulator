@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: d137e3d006b0a7547ac292e625dfa90d
 folderAsset: yes
 timeCreated: 1491926098
@@ -8,6 +9,11 @@ guid: 730a769004e0a0240a164868607f0bef
 folderAsset: yes
 timeCreated: 1491991864
 >>>>>>> develop
+=======
+guid: 730a769004e0a0240a164868607f0bef
+folderAsset: yes
+timeCreated: 1491991864
+>>>>>>> origin/julian
 licenseType: Free
 DefaultImporter:
   userData: 

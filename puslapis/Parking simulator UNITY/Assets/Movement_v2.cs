@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Movement_v2 : MonoBehaviour
 {
+<<<<<<< HEAD
     private GameObject masina;
     private GameObject vairas;
     private WheelCollider[] wheel_colliders = new WheelCollider[4];
     private Transform[] wheel = new Transform[4];
 
+=======
+
+    public WheelCollider[] wheel_colliders = new WheelCollider[4];
+    public Transform[] wheel = new Transform[4];
+>>>>>>> origin/julian
     [Range (1f,900f)]
     public float stabdziu_galia;
     [Range(1, 60)]
     public int sukimo_kampas;
+<<<<<<< HEAD
 
     private string mode = "Arcade";
 
@@ -51,6 +58,9 @@ public class Movement_v2 : MonoBehaviour
         audio.PlayOneShot(garsas_uzvedimo, volume);
         currentPlay = garsas_uzvedimo;
     }
+=======
+    private string mode = "Arcade";    
+>>>>>>> origin/julian
 
     //**************************************************************************************************************************************************************
     void Update() {
@@ -62,6 +72,7 @@ public class Movement_v2 : MonoBehaviour
                 mode = "Precision";
         }
 
+<<<<<<< HEAD
         if (!audio.isPlaying && currentPlay != garsas_atsitrenkimo) {
             audio.PlayOneShot(garsas_vaziavimo, volume);
             currentPlay = garsas_vaziavimo;
@@ -72,6 +83,9 @@ public class Movement_v2 : MonoBehaviour
         }
         
         ratuJudejimas();
+=======
+       ratuJudejimas();
+>>>>>>> origin/julian
    
         float rotation_speed = 0;
         if (mode == "Precision") {
@@ -80,11 +94,17 @@ public class Movement_v2 : MonoBehaviour
                 Variables.steering_wheel = 0.2f;
             else if (Variables.steering_wheel < -0.2f)
                 Variables.steering_wheel = -0.2f;
+<<<<<<< HEAD
             
             wheel_colliders[3].steerAngle = sukimo_kampas * 5 * Variables.steering_wheel;
             wheel_colliders[2].steerAngle = sukimo_kampas * 5 * Variables.steering_wheel;
             if (Mathf.Abs(Variables.steering_wheel) < 0.2f && Input.GetAxis("Horizontal") != 0)
                 vairoSukimas();
+=======
+
+            wheel_colliders[3].steerAngle = sukimo_kampas * 5 * Variables.steering_wheel;
+            wheel_colliders[2].steerAngle = sukimo_kampas * 5 * Variables.steering_wheel;
+>>>>>>> origin/julian
         }
         else if (mode == "Arcade") {
             rotation_speed = Input.GetAxis("Horizontal") * Variables.steering_speed * (Variables.speed <= 6.0f ? Variables.speed : 6.0f);
@@ -102,7 +122,11 @@ public class Movement_v2 : MonoBehaviour
                 wheel_colliders[i].brakeTorque = 0;
                 if (Mathf.Abs(wheel_colliders[i].motorTorque) > 200)
                     wheel_colliders[i].motorTorque = -200 * Input.GetAxis("Vertical");
+<<<<<<< HEAD
                 wheel_colliders[i].motorTorque -= 3*Input.GetAxis("Vertical") + Input.GetAxis("Vertical") * Variables.acceleration * Variables.delta_t;
+=======
+                wheel_colliders[i].motorTorque -= 3+Input.GetAxis("Vertical") * Variables.acceleration * Variables.delta_t;
+>>>>>>> origin/julian
             }
             else if (Input.GetAxis("Vertical") == 0) {
                     wheel_colliders[i].motorTorque = 0;
@@ -112,6 +136,7 @@ public class Movement_v2 : MonoBehaviour
                 wheel_colliders[i].motorTorque = 0;
                 wheel_colliders[i].brakeTorque = 0;
             }
+<<<<<<< HEAD
             if (Input.GetButton("Break")) {
                 if (Variables.speed > 1f) {
                     audio.PlayOneShot(garsas_stabdymo, volume);
@@ -123,12 +148,23 @@ public class Movement_v2 : MonoBehaviour
                 for (int q = 2; q < 4; q++)
                     wheel_colliders[q].brakeTorque = 0;
             
+=======
+  
+            if (Input.GetButton("Break"))
+                ratuStabdymas();
+            else
+                for (int q = 2; q < 4; q++)
+                    wheel_colliders[q].brakeTorque = 0;
+>>>>>>> origin/julian
         }
         ratuSukimasis();
     }
 
+<<<<<<< HEAD
     //**************************************************************************************************************************************************************
 
+=======
+>>>>>>> origin/julian
     void ratuStabdymas() {
         for (int q = 0; q < 4; q++) {
             wheel_colliders[q].motorTorque = 0;
@@ -136,8 +172,11 @@ public class Movement_v2 : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     //**************************************************************************************************************************************************************
 
+=======
+>>>>>>> origin/julian
     void ratuSukimasis() {
         for (int q = 0; q < 4; q++) {
             Quaternion quater;
@@ -147,6 +186,7 @@ public class Movement_v2 : MonoBehaviour
             wheel[q].rotation = quater;
         }
     }
+<<<<<<< HEAD
 
     //**************************************************************************************************************************************************************
 
@@ -162,4 +202,6 @@ public class Movement_v2 : MonoBehaviour
                  vairas.transform.Rotate(Vector3.up * Input.GetAxis("Horizontal") * Variables.steering_speed *60f);
     }
 
+=======
+>>>>>>> origin/julian
 }

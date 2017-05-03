@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Parking : MonoBehaviour {
-    public GameObject masina;
-    public GameObject park;
+    private GameObject masina;    //automobilis
+    private GameObject park;      //parkavimo vieta
 
+    // Update is called once per frame
     void Start() {
-
+        masina = GameObject.Find("BMW X5");    
+        park = GameObject.Find("parkspot");    
     }
     void Update() {
         if (Input.GetKeyDown(KeyCode.KeypadEnter) && Variables.speed < 0.01 && Variables.speed > -0.01)

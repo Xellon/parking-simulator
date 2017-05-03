@@ -11,10 +11,14 @@ public class MirrorReflection : MonoBehaviour
     public int m_TextureSize = 256;
     public float m_ClipPlaneOffset = 0.07f;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     public char m_mirror_char = '0'; 
 >>>>>>> develop
+=======
+    public char m_mirror_char = '0'; 
+>>>>>>> origin/julian
     public LayerMask m_ReflectLayers = -1;
 
     private Hashtable m_ReflectionCameras = new Hashtable(); // Camera -> Camera table
@@ -67,9 +71,13 @@ public class MirrorReflection : MonoBehaviour
         Vector3 oldpos = cam.transform.position;
         Vector3 newpos = reflection.MultiplyPoint(oldpos);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> develop
+=======
+
+>>>>>>> origin/julian
         reflectionCamera.worldToCameraMatrix = cam.worldToCameraMatrix * reflection;
 
         // Setup oblique projection matrix so that near plane is our reflection
@@ -92,9 +100,12 @@ public class MirrorReflection : MonoBehaviour
         foreach (Material mat in materials)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (mat.HasProperty("_ReflectionTex"))
                 mat.SetTexture("_ReflectionTex", m_ReflectionTexture);
 =======
+=======
+>>>>>>> origin/julian
            // if (m_mirror_char == 'l') {
                 if (mat.HasProperty("_ReflectionTex"))
                     mat.SetTexture("_ReflectionTex", m_ReflectionTexture);
@@ -107,7 +118,10 @@ public class MirrorReflection : MonoBehaviour
             //    if (mat.HasProperty("_ReflectionTex"))
             //        mat.SetTexture("_ReflectionTex", m_ReflectionTexture);
             //}
+<<<<<<< HEAD
 >>>>>>> develop
+=======
+>>>>>>> origin/julian
         }
 
         // Restore pixel light count
@@ -181,15 +195,21 @@ public class MirrorReflection : MonoBehaviour
             m_OldReflectionTextureSize = m_TextureSize;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         // Camera for reflection
         reflectionCamera = m_ReflectionCameras[currentCamera] as Camera;
 =======
+=======
+>>>>>>> origin/julian
         
         // Camera for reflection
         reflectionCamera = m_ReflectionCameras[currentCamera] as Camera;
         
+<<<<<<< HEAD
 >>>>>>> develop
+=======
+>>>>>>> origin/julian
         if (!reflectionCamera) // catch both not-in-dictionary and in-dictionary-but-deleted-GO
         {
             GameObject go = new GameObject("Mirror Refl Camera id" + GetInstanceID() + " for " + currentCamera.GetInstanceID(), typeof(Camera), typeof(Skybox));

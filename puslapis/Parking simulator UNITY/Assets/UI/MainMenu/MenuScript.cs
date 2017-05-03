@@ -20,10 +20,14 @@ public class MenuScript : MonoBehaviour {
         score_menu.enabled = false;
         main_menu.enabled = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
         Cursor.visible = true;
 >>>>>>> develop
+=======
+        Cursor.visible = true;
+>>>>>>> origin/julian
     }
 
     //**************************************************************************************************************************************************************
@@ -48,7 +52,10 @@ public class MenuScript : MonoBehaviour {
 
     public void continuePress() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/julian
         SceneManager.LoadScene(Variables.level_names[Variables.starting_level], LoadSceneMode.Single);
         Variables.current_level = Variables.starting_level;
     }
@@ -56,7 +63,10 @@ public class MenuScript : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     public void chooseLevelPress() {
+<<<<<<< HEAD
 >>>>>>> develop
+=======
+>>>>>>> origin/julian
         SceneManager.LoadScene(Variables.level_names[1], LoadSceneMode.Single);
         Variables.current_level = 1;
     }
@@ -74,11 +84,15 @@ public class MenuScript : MonoBehaviour {
 
     void Update () {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 	}
 =======
     }
 >>>>>>> develop
+=======
+    }
+>>>>>>> origin/julian
 
     //**************************************************************************************************************************************************************
 

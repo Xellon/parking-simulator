@@ -7,6 +7,7 @@ public class Variables : MonoBehaviour {
 
     public static float speed = 0.0f; //mps
 <<<<<<< HEAD
+<<<<<<< HEAD
     public static float max_speed = 200.0f; //mps
     public static float acceleration = 3.0f; //mps^2
     public static float deacceleration = 1.0f; //mps^2
@@ -43,12 +44,36 @@ public class Variables : MonoBehaviour {
         level_names[1] = "Intro";
         level_names[2] = "Tutorial1";
 =======
+=======
+    public static float max_speed = 50.0f; //mps
+    public static float acceleration = 20.0f; //mps^2
+    public static float deacceleration = 1.0f; //mps^2
+    public static float brakes = 70.0f; //mps^2
+    public static float steering_wheel = 0.0f; //Kampas, if kampas < 0 - kaire, else desine
+    public static float steering_speed = 0.1f;
+
+    public static int current_level = 0;
+    public static int starting_level = 2; //Tutorial level
+    public static string[] level_names = new string[100];
+    //public enum wheel{
+    //    FRONT_L=0,
+    //    FRONT_R=1,
+    //    REAR_L=2,
+    //    REAR_R=3
+    //}
+
+    //**************************************************************************************************************************************************************
+
+>>>>>>> origin/julian
     void Awake () {
         level_names[0] = "MainMenu";
         level_names[1] = "LevelChoices";
         level_names[2] = "Intro";
         level_names[3] = "Tutorial1";
+<<<<<<< HEAD
 >>>>>>> develop
+=======
+>>>>>>> origin/julian
     }
 
     //**************************************************************************************************************************************************************
