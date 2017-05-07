@@ -17,21 +17,22 @@ public class Movement_v2 : MonoBehaviour
     private string mode = "Arcade";
 
     //Sounds
-    public AudioClip garsas_uzvedimo;
-    public AudioClip garsas_vaziavimo;
-    public AudioClip garsas_stabdymo;
-    public AudioClip garsas_atsitrenkimo;
+    private AudioClip garsas_uzvedimo;
+    private AudioClip garsas_vaziavimo;
+    private AudioClip garsas_stabdymo;
+    private AudioClip garsas_atsitrenkimo;
+    private AudioClip garsas_parked;
+    private AudioClip garsas_failed;
     private AudioClip currentPlay;
-    private AudioSource audio;
-    private float volume;
+    private AudioSource audios;
+    public static float volume;
 
     //**************************************************************************************************************************************************************
 
     void Start() {
-        vairas = GameObject.Find("Vairas");
-
-        //Ratu nustatymai
-        masina = GameObject.FindGameObjectWithTag("PlayerCar");
+    vairas = GameObject.Find("Vairas");
+    //Ratu nustatymai
+    masina = GameObject.FindGameObjectWithTag("PlayerCar");
         wheel_colliders[0] = GameObject.Find("RRcol").GetComponent<WheelCollider>();
         wheel_colliders[1] = GameObject.Find("RLcol").GetComponent<WheelCollider>();
         wheel_colliders[2] = GameObject.Find("FRcol").GetComponent<WheelCollider>();
@@ -46,9 +47,16 @@ public class Movement_v2 : MonoBehaviour
         wheel_colliders[3].motorTorque = 0;
 
         //Garso nustatymai
-        audio = GetComponent<AudioSource>();
+        garsas_uzvedimo = Resources.Load<AudioClip>("Sounds/carStart");
+        garsas_vaziavimo = Resources.Load<AudioClip>("Sounds/carEngine");
+        garsas_stabdymo = Resources.Load<AudioClip>("Sounds/carBrakes");
+        garsas_atsitrenkimo = Resources.Load<AudioClip>("Sounds/carCrash");
+        garsas_parked = Resources.Load<AudioClip>("Sounds/carParked");
+        garsas_failed = Resources.Load<AudioClip>("Sounds/carFailed");
+
+        audios = GetComponent<AudioSource>();
         volume = 0.1f;
-        audio.PlayOneShot(garsas_uzvedimo, volume);
+        audios.PlayOneShot(garsas_uzvedimo, volume);
         currentPlay = garsas_uzvedimo;
     }
 
@@ -61,13 +69,15 @@ public class Movement_v2 : MonoBehaviour
             else if (mode == "Arcade")
                 mode = "Precision";
         }
-
-        if (!audio.isPlaying && currentPlay != garsas_atsitrenkimo) {
-            audio.PlayOneShot(garsas_vaziavimo, volume);
+        Debug.Log(currentPlay);
+        if (!audios.isPlaying && currentPlay != garsas_atsitrenkimo) {
+            audios.Stop();
+            audios.PlayOneShot(garsas_vaziavimo, volume);
             currentPlay = garsas_vaziavimo;
         }
-        if (currentPlay == garsas_stabdymo && Variables.speed < 1f)   {
-            audio.PlayOneShot(garsas_vaziavimo, volume);
+        if (currentPlay == garsas_stabdymo && Variables.speed < 2f)   {
+            audios.Stop();
+            audios.PlayOneShot(garsas_vaziavimo, volume);
             currentPlay = garsas_vaziavimo;
         }
         
@@ -91,7 +101,21 @@ public class Movement_v2 : MonoBehaviour
             Variables.steering_wheel = rotation_speed;
             wheel_colliders[3].steerAngle = sukimo_kampas * Variables.steering_wheel*1.66f;
             wheel_colliders[2].steerAngle = sukimo_kampas * Variables.steering_wheel*1.66f;
-        }   
+        }
+        // Parking check
+        if (ParkingTrigger.trigger1 && ParkingTrigger.trigger2 && ParkingTrigger.trigger3 &&
+            ParkingTrigger.trigger4 && ParkingTrigger.trigger5 && ParkingTrigger.trigger6 &&
+            Variables.speed < 0.5)
+        {
+            if (currentPlay != garsas_parked)
+                audios.Stop();
+            if (!audios.isPlaying) {
+                currentPlay = garsas_parked;
+                audios.PlayOneShot(garsas_parked, volume * 5);
+            }
+
+        }
+        //***************
     }
    
     //**************************************************************************************************************************************************************
@@ -114,7 +138,7 @@ public class Movement_v2 : MonoBehaviour
             }
             if (Input.GetButton("Break")) {
                 if (Variables.speed > 1f) {
-                    audio.PlayOneShot(garsas_stabdymo, volume);
+                    audios.PlayOneShot(garsas_stabdymo, volume);
                     currentPlay = garsas_stabdymo;
                 }
                 ratuStabdymas();
@@ -151,7 +175,7 @@ public class Movement_v2 : MonoBehaviour
     //**************************************************************************************************************************************************************
 
     void OnCollisionEnter(Collision collision) {
-        audio.PlayOneShot(garsas_atsitrenkimo, volume);
+        audios.PlayOneShot(garsas_atsitrenkimo, volume*3);
 
     }
 

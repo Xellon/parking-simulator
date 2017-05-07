@@ -1,10 +1,17 @@
 fileFormatVersion: 2
 guid: 45521c5777031ac4a9b6083a4ebcaf04
-timeCreated: 1492862524
+timeCreated: 1494077839
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - garsas_uzvedimo: {fileID: 8300000, guid: f3bae50d4088d83418710709ec59a1e4, type: 3}
+  - garsas_vaziavimo: {fileID: 8300000, guid: ef5149bed55ab8642b2f1e274895723f, type: 3}
+  - garsas_stabdymo: {fileID: 8300000, guid: 1e799ff7b01e50a47a152382e4c23cd1, type: 3}
+  - garsas_atsitrenkimo: {fileID: 8300000, guid: df1415791259988458fe05b08448ae4e,
+      type: 3}
+  - garsas_parked: {fileID: 8300000, guid: 0dd5ec1b7c828ff429343fc5b41e7c29, type: 3}
+  - garsas_failed: {fileID: 8300000, guid: 8e1564949b84bc14699570e26391d257, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
