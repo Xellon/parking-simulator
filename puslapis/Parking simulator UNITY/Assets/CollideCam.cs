@@ -26,7 +26,7 @@ public class CollideCam : MonoBehaviour
 
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision other)
     {
         Debug.Log("Triggered");
     }
