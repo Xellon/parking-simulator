@@ -15,6 +15,7 @@ public class Movement_v2 : MonoBehaviour
     public int sukimo_kampas;
 
     private string mode = "Arcade";
+    private bool parked = false;
 
     //Sounds
     private AudioClip garsas_uzvedimo;
@@ -205,6 +206,13 @@ public class Movement_v2 : MonoBehaviour
             wheel[q].position = vieta;
             wheel[q].rotation = quater;
         }
+    }
+
+    //**************************************************************************************************************************************************************
+
+    public bool getParked()
+    {
+        return parked;
     }
 
     //**************************************************************************************************************************************************************
