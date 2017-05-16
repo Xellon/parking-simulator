@@ -116,7 +116,7 @@ public class Movement_v2 : MonoBehaviour
         {
             if (currentPlay != garsas_parked)
                 audios.Stop();
-            if (!audios.isPlaying) {
+            if (!audios.isPlaying && !simulate) {
                 currentPlay = garsas_parked;
                 audios.PlayOneShot(garsas_parked, volume * 5);
             }
@@ -218,7 +218,9 @@ public class Movement_v2 : MonoBehaviour
     //**************************************************************************************************************************************************************
 
     void OnCollisionEnter(Collision collision) {
+        if (!simulate)
         audios.PlayOneShot(garsas_atsitrenkimo, volume*3);
+       
 
     }
 
