@@ -40,14 +40,14 @@ public class tutorial_90deg : MonoBehaviour {
         script.setSimulate(true); // Movement scripte ijungia simulation rezima, t.y. zmogus nk negali daryt ir yra simuliuojamas input
 
 
-        comment.text = "Privažiuokite 1m atstumu nuo mašinų taip, kad jūsų veidrodėliai sutaptų su antro automobilio dešiniuoju kraštu, o jūsų mašinos kampas būtų 90 laipsnių";
+        comment.text = "Privažiuokite 1m atstumu nuo mašinų taip, kad jūsų veidrodėliai sutaptų su antro nuo jūsų parkavimo vietos automobilio dešiniuoju kraštu, o jūsų mašinos kampas su stovėjimo vieta būtų 90 laipsnių";
         yield return new WaitForSeconds(pause_time);
 
-        comment.text = "Susireguliuokite veidrodelius, kad matytumete linijas; Dabar jie uz jus jau yra sureguliuoti";
+        comment.text = "Susireguliuokite veidrodėlius, kad matytumėte linijas; Dabar jie už jus jau yra sureguliuoti";
         yield return new WaitForSeconds(pause_time);
 
         time = 0.0f;
-        comment.text = "Pasukite vaira kiek galite i desine";
+        comment.text = "Pasukite vairą kiek galite į dešinę";
         while (time < rotation_time) {
             script.setHorizontalAxis(1);
             time += Time.deltaTime;
@@ -57,7 +57,7 @@ public class tutorial_90deg : MonoBehaviour {
 
         //Galima butu tiesiogiai, jei taip paprasciau riboti greiti per Variables.speed; Taip pat ir vairo apsisukima
         time = 0.0f;
-        comment.text = "Vaziuokite, kol masina neissitiesins";
+        comment.text = "Važiuokite, kol mašina neišsitiesins";
         while (time < drive_time) {
             script.setVerticalAxis(-1);
             time += Time.deltaTime;
