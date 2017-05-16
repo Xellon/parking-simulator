@@ -13,9 +13,9 @@ public class tutorial_90deg : MonoBehaviour {
     private Quaternion car_rotation;
 
     private bool start=true;
-    public float rotation_time = 6.0f;
-    public float drive_time = 2.0f;
-    public float pause_time = 3.0f;
+    public float rotation_time = 2.0f;
+    public float drive_time = 3.5f;
+    public float pause_time = 3.5f;
 
     // Use this for initialization
     void Start () {
@@ -40,7 +40,7 @@ public class tutorial_90deg : MonoBehaviour {
         script.setSimulate(true); // Movement scripte ijungia simulation rezima, t.y. zmogus nk negali daryt ir yra simuliuojamas input
 
 
-        comment.text = "Privaziuokite 1m atstumu nuo masinu taip, kad jusu veidrodeliai sutaptu su antro automobilio desiniuoju krastu, o jusu masinos kampas butu 90 laipsniu";
+        comment.text = "Privažiuokite 1m atstumu nuo mašinų taip, kad jūsų veidrodėliai sutaptų su antro automobilio dešiniuoju kraštu, o jūsų mašinos kampas būtų 90 laipsnių";
         yield return new WaitForSeconds(pause_time);
 
         comment.text = "Susireguliuokite veidrodelius, kad matytumete linijas; Dabar jie uz jus jau yra sureguliuoti";
