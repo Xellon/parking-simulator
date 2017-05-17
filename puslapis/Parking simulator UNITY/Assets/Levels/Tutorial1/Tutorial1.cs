@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Scenario:
-// (x) Load scene with camera from above (90 degrees?)
-// (x) Show a description of the tutorial + objectives and loop animation
-// (x) After you're done looking at animation press button to play
-// (x) Replay animation from the menu
-// ( ) Win condition when in collision box
+// TODO: Win condition
+
+// vehicle: visas automobilio objektas
+// CarUI: FrontUI objektas
 
 public class Tutorial1 : MonoBehaviour {
 
@@ -16,33 +14,52 @@ public class Tutorial1 : MonoBehaviour {
 
 	private Transform player;
 
+    public Transform infoPanel;
+    public Transform winPanel;
+
     private Vector3 initialPos;
     private Quaternion initialRot;
+    private Animation tutorialCinematic;
 
 	void Start () {
 		player = vehicle.gameObject.transform.Find("FPSController");
+        tutorialCinematic = vehicle.GetComponent<Animation>();
 
         CarUI.SetActive(false);
+        player.gameObject.SetActive(false);
+
+        infoPanel.gameObject.SetActive(true);
+        winPanel.gameObject.SetActive(false);
 
         initialPos = vehicle.position;
         initialRot = vehicle.rotation;
 
-        vehicle.GetComponent<Animation>().Play();
+        tutorialCinematic.Play();
     }
 
 	void Update () {
-		if (Input.anyKey)
+
+        // Parodoma kaip parkuojamasi
+		if (Input.anyKey && tutorialCinematic.isPlaying)
 		{
 			player.gameObject.SetActive(true);
             CarUI.SetActive(true);
 
-			vehicle.GetComponent<Animation>().Stop();
+			tutorialCinematic.Stop();
 
             vehicle.position = initialPos;
             vehicle.rotation = initialRot;
 
-            this.gameObject.SetActive(false);
+            infoPanel.gameObject.SetActive(false);
 		}
+
+        // 
+        if (vehicle.GetComponent<Movement_v2>().getParked())
+        {
+            Debug.Log("Parked");
+            winPanel.gameObject.SetActive(true);
+        }
+
 		
 	}
 }
