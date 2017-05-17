@@ -14,34 +14,52 @@ public class Tutorial1 : MonoBehaviour {
 
 	private Transform player;
 
+    public Transform infoPanel;
+    public Transform winPanel;
+
     private Vector3 initialPos;
     private Quaternion initialRot;
+    private Animation tutorialCinematic;
 
 	void Start () {
 		player = vehicle.gameObject.transform.Find("FPSController");
+        tutorialCinematic = vehicle.GetComponent<Animation>();
 
-        player.gameObject.SetActive(false);
         CarUI.SetActive(false);
+        player.gameObject.SetActive(false);
+
+        infoPanel.gameObject.SetActive(true);
+        winPanel.gameObject.SetActive(false);
 
         initialPos = vehicle.position;
         initialRot = vehicle.rotation;
 
-        vehicle.GetComponent<Animation>().Play();
+        tutorialCinematic.Play();
     }
 
 	void Update () {
-		if (Input.anyKey)
+
+        // Parodoma kaip parkuojamasi
+		if (Input.anyKey && tutorialCinematic.isPlaying)
 		{
 			player.gameObject.SetActive(true);
             CarUI.SetActive(true);
 
-			vehicle.GetComponent<Animation>().Stop();
+			tutorialCinematic.Stop();
 
             vehicle.position = initialPos;
             vehicle.rotation = initialRot;
 
-            this.gameObject.SetActive(false);
+            infoPanel.gameObject.SetActive(false);
 		}
+
+        // 
+        if (vehicle.GetComponent<Movement_v2>().getParked())
+        {
+            Debug.Log("Parked");
+            winPanel.gameObject.SetActive(true);
+        }
+
 		
 	}
 }
