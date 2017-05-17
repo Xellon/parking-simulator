@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Scenario:
-// (x) Load scene with camera from above (90 degrees?)
-// (x) Show a description of the tutorial + objectives and loop animation
-// (x) After you're done looking at animation press button to play
-// (x) Replay animation from the menu
-// ( ) Win condition when in collision box
+// TODO: Win condition
+
+// vehicle: visas automobilio objektas
+// CarUI: FrontUI objektas
 
 public class Tutorial1 : MonoBehaviour {
 
@@ -22,6 +20,7 @@ public class Tutorial1 : MonoBehaviour {
 	void Start () {
 		player = vehicle.gameObject.transform.Find("FPSController");
 
+        player.gameObject.SetActive(false);
         CarUI.SetActive(false);
 
         initialPos = vehicle.position;
