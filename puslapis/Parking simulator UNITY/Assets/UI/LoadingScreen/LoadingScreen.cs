@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LoadingScreen : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    private AsyncOperation async = null;
+
+    // Use this for initialization
+    void Start () {
         StartCoroutine(LoadNewScene());
     }
 	
@@ -17,11 +19,11 @@ public class LoadingScreen : MonoBehaviour {
     // The coroutine runs on its own at the same time as Update() and takes an integer indicating which scene to load.
     IEnumerator LoadNewScene() {
         // Start an asynchronous operation to load the scene that was passed to the LoadNewScene coroutine.
-        AsyncOperation async = SceneManager.LoadSceneAsync(Variables.level_names[Variables.current_level], LoadSceneMode.Single);
+        async = SceneManager.LoadSceneAsync(Variables.level_names[Variables.current_level], LoadSceneMode.Single);
 
         // While the asynchronous operation to load the new scene is not yet complete, continue waiting until it's done.
         while (!async.isDone) {
-            yield return null;
+            yield return async;
         }
 
     }
