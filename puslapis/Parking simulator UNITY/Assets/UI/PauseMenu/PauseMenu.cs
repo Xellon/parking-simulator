@@ -55,39 +55,27 @@ public class PauseMenu : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     public void restart(){
-        int scene = SceneManager.GetActiveScene().buildIndex;
-
-        SceneManager.LoadScene(scene, LoadSceneMode.Single);
-
-        Cursor.visible = false;
-        Time.timeScale = 1;
+        SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Single);
     }
 
     //**************************************************************************************************************************************************************
 
     public void levelSelect(){
-        SceneManager.LoadScene(Variables.level_names[1], LoadSceneMode.Single);
         Variables.current_level = 1;
-        Cursor.visible = false;
-        Time.timeScale = 1;
+        SceneManager.LoadScene("LevelChoices", LoadSceneMode.Single);
     }
 
     //**************************************************************************************************************************************************************
 
     public void nextLevel() {
         Variables.current_level++;
-        SceneManager.LoadScene(Variables.level_names[Variables.current_level], LoadSceneMode.Single);
-
-        Cursor.visible = false;
-        Time.timeScale = 1;
+        SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Single);
     }
 
     //**************************************************************************************************************************************************************
 
     public void mainMenu() {
-        SceneManager.LoadScene(Variables.level_names[0], LoadSceneMode.Single);
         Variables.current_level = 0;
-
-        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 }
