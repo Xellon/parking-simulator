@@ -141,8 +141,8 @@ public class tutorial2 : MonoBehaviour {
         script.setSimulate(false);
         car.position = car_position;
         car.rotation = car_rotation;
-        ui.transform.FindChild("InstructionPanel").gameObject.SetActive(false);
-        ui.transform.FindChild("Task").gameObject.SetActive(true);
+        ui.transform.FindChild("TutorialInstructions").gameObject.SetActive(false);
+        ui.transform.FindChild("TutorialInfo").gameObject.SetActive(true);
         yield return null;
     }
 }
