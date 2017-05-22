@@ -16,7 +16,7 @@ require "db.php";
  		$errors[] = 'Iveskite slaptazodi';
  	}
 
- 	if ($data['PASSWORD_2'] != $data[PASSWORD]) {
+ 	if ($data['PASSWORD_2'] != $data['PASSWORD']) {
  		$errors[] = '2 slaptazuodis ivestas ne teisingai';
  	}
 
