@@ -43,15 +43,15 @@ public class MenuScript : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     public void continuePress() {
-        SceneManager.LoadScene(Variables.level_names[Variables.starting_level], LoadSceneMode.Single);
         Variables.current_level = Variables.starting_level;
+        SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Single);
     }
 
     //**************************************************************************************************************************************************************
 
     public void chooseLevelPress() {
-        SceneManager.LoadScene(Variables.level_names[1], LoadSceneMode.Single);
         Variables.current_level = 1;
+        SceneManager.LoadScene("LevelChoices", LoadSceneMode.Single);
     }
 
     //**************************************************************************************************************************************************************

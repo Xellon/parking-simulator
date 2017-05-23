@@ -1,26 +1,7 @@
 # Parking Simulator  
 
-[Php servas XAMPP](https://www.apachefriends.org/index.html)  
-[PHPStorm](https://www.jetbrains.com/student/)
-[Yii framework](http://www.yiiframework.com)  
-[Scrum thingy](https://ide.vgtu.lt) (reik VPN) 
-
-* **Pozicijos:**  
-	* Dizaineris - Elonas  
-	* Projektuotojas - Elonas  
-	* Level design -  
-	* Front-end :  
-		* CSS + HTML -  
-		* JavaScript - Viktor Nedelko (Jei prireiks)  
-	* Back-end :  
-	* apjungimas su duombaze -  
-	* kodavimas/šifravimas(jei prireiks) - Elonas  
-	* logika (jei prireiks) - Elonas  
-	* Duombazių programuotojas - Viktor Nedelko. (Savo noru)  
-	* Testuotojas - Viktor Nedelko (Jei prireiks)  
-	* Diegėjas (idėt į host ir pan.) -  
-	* Saugumo spec(nžn, gal čia overkill) -  
-
+* **Commit taisykles**
+	* nvm
 
 * **Programavimo guidelines:**  
 	* Pavadinimai:  
