@@ -31,6 +31,8 @@ public class Movement_v2 : MonoBehaviour
     private bool simulate = false;
     private float vertical_axis;
     private float horizontal_axis;
+
+    private float timer = 0f;
     //**************************************************************************************************************************************************************
 
     void Start() {
@@ -77,7 +79,7 @@ public class Movement_v2 : MonoBehaviour
             else if (mode == "Arcade")
                 mode = "Precision";
         }
-        if (!audios.isPlaying && currentPlay != garsas_atsitrenkimo) {
+        if (!audios.isPlaying && currentPlay != garsas_atsitrenkimo && currentPlay != garsas_parked) {
             audios.Stop();
             audios.PlayOneShot(garsas_vaziavimo, volume);
             currentPlay = garsas_vaziavimo;
@@ -87,7 +89,8 @@ public class Movement_v2 : MonoBehaviour
             audios.PlayOneShot(garsas_vaziavimo, volume);
             currentPlay = garsas_vaziavimo;
         }
-        
+        if (audios.isPlaying && currentPlay == garsas_vaziavimo)
+            audios.pitch = 1 + Mathf.Abs(vertical_axis *0.2f) ;
         ratuJudejimas();
    
         float rotation_speed = 0;
@@ -109,22 +112,39 @@ public class Movement_v2 : MonoBehaviour
             wheel_colliders[3].steerAngle = sukimo_kampas * Variables.steering_wheel*1.66f;
             wheel_colliders[2].steerAngle = sukimo_kampas * Variables.steering_wheel*1.66f;
         }
-        // Parking check
+
+        if (Variables.speed < 0.001 && horizontal_axis == 0 && vertical_axis == 0 && !simulate)
+            timer += Time.deltaTime;
+        else
+            timer = 0f;
+        if (timer > 1f)
+            parkingCheck();
+    }
+    //**************************************************************************************************************************************************************
+
+    void parkingCheck() {
+        int level_id;
+
         if (ParkingTrigger.trigger1 && ParkingTrigger.trigger2 && ParkingTrigger.trigger3 &&
             ParkingTrigger.trigger4 && ParkingTrigger.trigger5 && ParkingTrigger.trigger6 &&
-            Variables.speed < 0.5)
+            Variables.speed < 0.1)
         {
             if (currentPlay != garsas_parked)
                 audios.Stop();
-            if (!audios.isPlaying && !simulate) {
+            if (!audios.isPlaying && !simulate && currentPlay != garsas_parked)  {
                 currentPlay = garsas_parked;
                 audios.PlayOneShot(garsas_parked, volume * 5);
             }
-
+            else if (!audios.isPlaying && !simulate) {
+                level_id = Variables.current_level + 1;
+                if (level_id == 7)
+                    level_id = 0;
+                Debug.Log(level_id);
+                LevelChoice.startLevel(level_id);
+            }
         }
-        //***************
     }
-   
+
     //**************************************************************************************************************************************************************
 
     void ratuJudejimas() {

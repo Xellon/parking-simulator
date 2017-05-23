@@ -42,11 +42,12 @@ public class tutorial2 : MonoBehaviour {
 
     IEnumerator tutorial()
     {
-        yield return new WaitForSeconds(pause_time);
-        ui.transform.FindChild("Task").gameObject.SetActive(false);
+           yield return new WaitForSeconds(pause_time);
+        ui.transform.FindChild("TutorialInfo").gameObject.SetActive(false);
+        ui.transform.FindChild("TutorialInstructions").gameObject.SetActive(true);
 
         float time;
-        Text comment = ui.transform.FindChild("InstructionPanel").transform.FindChild("Comment").GetComponent<Text>();
+        Text comment = ui.transform.FindChild("TutorialInstructions").transform.FindChild("Comment").GetComponent<Text>();
         script.setSimulate(true); // Movement scripte ijungia simulation rezima, t.y. zmogus nk negali daryt ir yra simuliuojamas input
 
         comment.text = "Privažiuokite 1m atstumu nuo mašinų taip, kad jūsų galas sutaptų su šone esančio automobilio galu";
