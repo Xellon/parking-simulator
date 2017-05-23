@@ -73,7 +73,7 @@ public class LevelChoice : MonoBehaviour {
 
     //**************************************************************************************************************************************************************
 
-    public void startLevel(int level_id) {
+    public static void startLevel(int level_id) {
         Variables.current_level = level_id;
         SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Single);
     }
