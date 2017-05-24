@@ -39,9 +39,9 @@ public class FrontUI : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     void Update () {
-
+        max_rotation = Movement_v2.mode == "Precision" ? 2.0f: 6.0f;
         rotation = Variables.steering_wheel;
-        rotation = rotation/max_rotation * 720 * 10;
+        rotation = rotation/max_rotation * 540 * 10;
 
         delta_rotation = sprite_rotation - rotation;
         sprite_rotation = rotation;
