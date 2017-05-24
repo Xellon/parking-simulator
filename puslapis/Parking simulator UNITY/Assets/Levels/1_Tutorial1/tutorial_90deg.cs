@@ -33,7 +33,15 @@ public class tutorial_90deg : MonoBehaviour {
             StartCoroutine("tutorial");
             start = false;
         }
-	}
+        if (Input.GetKeyDown(KeyCode.O)) {
+            StopCoroutine("tutorial");
+            script.setSimulate(false);
+            car.position = car_position;
+            car.rotation = car_rotation;
+            tutorial_ui.transform.FindChild("TutorialInstructions").gameObject.SetActive(false);
+            tutorial_ui.transform.FindChild("TutorialInfo").gameObject.SetActive(true);
+        }
+    }
 
     IEnumerator tutorial() {
         float time;
