@@ -1,0 +1,37 @@
+.toolbar_buttons1 {
+    display: inline-block;
+    right: 30px;
+    bottom: 15%;
+    position: fixed;
+}
+
+.toolbar_buttons1 button {
+    display: inline-block;
+    
+    margin:  10px 10px 10px 10px;
+    padding: 5px 5px 5px 5px;
+    
+    height: 40px;
+    width: 200px;
+    font-size: 24px;
+    
+    cursor: pointer;
+    color: #888888;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 1px grey;
+
+}
+
+.toolbar_buttons1 button:hover {
+    background-color: #AAAAAA;
+    color: #FFFFFF;
+}
+
+.toolbar_buttons1 button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+

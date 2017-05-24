@@ -53,7 +53,7 @@ public class Variables : MonoBehaviour {
     public static float steering_speed = 0.1f;
 
     public static int current_level = 0;
-    public static int starting_level = 2; //Tutorial level
+    public static int starting_level = 3; //Tutorial level
     public static string[] level_names = new string[100];
     //public enum wheel{
     //    FRONT_L=0,
@@ -68,12 +68,20 @@ public class Variables : MonoBehaviour {
     void Awake () {
         level_names[0] = "MainMenu";
         level_names[1] = "LevelChoices";
+<<<<<<< HEAD
         level_names[2] = "Intro";
         level_names[3] = "Tutorial1";
 <<<<<<< HEAD
 >>>>>>> develop
 =======
 >>>>>>> origin/julian
+=======
+        level_names[2] = "LoadingScreen";
+        level_names[3] = "Intro";
+        level_names[4] = "Tutorial1";
+        level_names[5] = "Tutorial2";
+        level_names[6] = "Alley";
+>>>>>>> Xellon/develop
     }
 
     //**************************************************************************************************************************************************************

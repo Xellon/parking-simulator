@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape)||Input.GetKeyDown(KeyCode.Return)) {
             pausePress();
         }
     }
@@ -58,6 +58,7 @@ public class PauseMenu : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         SceneManager.LoadScene(Variables.level_names[Variables.current_level], LoadSceneMode.Single);
 =======
         int scene = SceneManager.GetActiveScene().buildIndex;
@@ -75,6 +76,9 @@ public class PauseMenu : MonoBehaviour {
 
         Cursor.visible = false;
         Time.timeScale = 1;
+=======
+        SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Single);
+>>>>>>> Xellon/develop
     }
 
     //**************************************************************************************************************************************************************
@@ -82,6 +86,7 @@ public class PauseMenu : MonoBehaviour {
     public void levelSelect(){
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
         SceneManager.LoadScene(Variables.level_names[1], LoadSceneMode.Single);
@@ -93,24 +98,23 @@ public class PauseMenu : MonoBehaviour {
 >>>>>>> origin/julian
         Cursor.visible = false;
         Time.timeScale = 1;
+=======
+        Variables.current_level = 1;
+        SceneManager.LoadScene("LevelChoices", LoadSceneMode.Single);
+>>>>>>> Xellon/develop
     }
 
     //**************************************************************************************************************************************************************
 
     public void nextLevel() {
         Variables.current_level++;
-        SceneManager.LoadScene(Variables.level_names[Variables.current_level], LoadSceneMode.Single);
-
-        Cursor.visible = false;
-        Time.timeScale = 1;
+        SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Single);
     }
 
     //**************************************************************************************************************************************************************
 
     public void mainMenu() {
-        SceneManager.LoadScene(Variables.level_names[0], LoadSceneMode.Single);
         Variables.current_level = 0;
-
-        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 }
