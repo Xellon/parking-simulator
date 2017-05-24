@@ -50,14 +50,8 @@ public class tutorial2 : MonoBehaviour {
 
     IEnumerator tutorial()
     {
-<<<<<<< HEAD
         yield return new WaitForSeconds(pause_time);
         //ui.transform.FindChild("TutorialInfo").gameObject.SetActive(false);
-=======
-           yield return new WaitForSeconds(pause_time);
-        ui.transform.FindChild("TutorialInfo").gameObject.SetActive(false);
-        ui.transform.FindChild("TutorialInstructions").gameObject.SetActive(true);
->>>>>>> refs/remotes/origin/develop
 
         float time;
         Text comment = ui.transform.FindChild("TutorialInstructions").transform.FindChild("Comment").GetComponent<Text>();
