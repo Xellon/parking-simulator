@@ -55,14 +55,53 @@ public class PauseMenu : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     public void restart(){
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+        SceneManager.LoadScene(Variables.level_names[Variables.current_level], LoadSceneMode.Single);
+=======
+        int scene = SceneManager.GetActiveScene().buildIndex;
+
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+>>>>>>> develop
+=======
+        SceneManager.LoadScene(Variables.level_names[Variables.current_level], LoadSceneMode.Single);
+>>>>>>> origin/julian
+=======
+        int scene = SceneManager.GetActiveScene().buildIndex;
+
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+>>>>>>> develop
+
+        Cursor.visible = false;
+        Time.timeScale = 1;
+=======
         SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Single);
+>>>>>>> Xellon/develop
     }
 
     //**************************************************************************************************************************************************************
 
     public void levelSelect(){
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+        SceneManager.LoadScene(Variables.level_names[1], LoadSceneMode.Single);
+        Variables.current_level = 1;
+>>>>>>> develop
+=======
+        SceneManager.LoadScene(Variables.level_names[1], LoadSceneMode.Single);
+        Variables.current_level = 1;
+>>>>>>> origin/julian
+        Cursor.visible = false;
+        Time.timeScale = 1;
+=======
         Variables.current_level = 1;
         SceneManager.LoadScene("LevelChoices", LoadSceneMode.Single);
+>>>>>>> Xellon/develop
     }
 
     //**************************************************************************************************************************************************************

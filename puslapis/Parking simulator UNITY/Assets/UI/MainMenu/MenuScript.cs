@@ -19,7 +19,15 @@ public class MenuScript : MonoBehaviour {
         settings_menu.enabled = false;
         score_menu.enabled = false;
         main_menu.enabled = true;
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
         Cursor.visible = true;
+>>>>>>> develop
+=======
+        Cursor.visible = true;
+>>>>>>> origin/julian
     }
 
     //**************************************************************************************************************************************************************
@@ -43,6 +51,15 @@ public class MenuScript : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     public void continuePress() {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/julian
+        SceneManager.LoadScene(Variables.level_names[Variables.starting_level], LoadSceneMode.Single);
+=======
+>>>>>>> Xellon/develop
         Variables.current_level = Variables.starting_level;
         SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Single);
     }
@@ -50,6 +67,14 @@ public class MenuScript : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     public void chooseLevelPress() {
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> develop
+=======
+>>>>>>> origin/julian
+        SceneManager.LoadScene(Variables.level_names[1], LoadSceneMode.Single);
+=======
+>>>>>>> Xellon/develop
         Variables.current_level = 1;
         SceneManager.LoadScene("LevelChoices", LoadSceneMode.Single);
     }
@@ -66,7 +91,16 @@ public class MenuScript : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     void Update () {
+<<<<<<< HEAD
+<<<<<<< HEAD
+		
+	}
+=======
     }
+>>>>>>> develop
+=======
+    }
+>>>>>>> origin/julian
 
     //**************************************************************************************************************************************************************
 

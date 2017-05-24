@@ -37,6 +37,13 @@ public class Practice : MonoBehaviour {
         gameObject.transform.FindChild("TextInstructionsBrake").gameObject.SetActive(false);
         gameObject.transform.FindChild("TextInstructionsLook").gameObject.SetActive(false);
         gameObject.transform.FindChild("TextInstructionsOtherMode").gameObject.SetActive(false);
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        gameObject.transform.FindChild("TextAnnouncement").gameObject.SetActive(false);
+>>>>>>> develop
+=======
+>>>>>>> origin/julian
 
         //Function pointers
         tutorialCheck[0] = checkForLooking;
@@ -78,9 +85,26 @@ public class Practice : MonoBehaviour {
             tutorialDo[0]();
             this.with_tutorial = true;
         }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+        else
+            gameObject.transform.FindChild("Instructions").gameObject.SetActive(true);
+=======
+        else {
+            gameObject.transform.FindChild("Instructions").gameObject.SetActive(true);
+            gameObject.transform.FindChild("TextAnnouncement").gameObject.SetActive(true);
+        }
+>>>>>>> develop
+=======
+        else
+            gameObject.transform.FindChild("Instructions").gameObject.SetActive(true);
+>>>>>>> origin/julian
+=======
         else {
             gameObject.transform.FindChild("Instructions").gameObject.SetActive(true);
         }
+>>>>>>> develop
     }
 
     //**************************************************************************************************************************************************************
@@ -108,7 +132,17 @@ public class Practice : MonoBehaviour {
     public void tutorialFinish() {
         gameObject.transform.FindChild("TextInstructionsBrake").gameObject.SetActive(false);
         gameObject.transform.FindChild("Instructions").gameObject.SetActive(true);
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        gameObject.transform.FindChild("TextAnnouncement").gameObject.SetActive(true);
+>>>>>>> develop
+=======
+>>>>>>> origin/julian
+=======
         with_tutorial = false;
+>>>>>>> develop
     }
 
     //**************************************************************************************************************************************************************

@@ -4,7 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 public class FrontUI : MonoBehaviour {
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+    public Canvas front_UI;
+=======
     private Canvas front_UI;
+>>>>>>> develop
+=======
+    private Canvas front_UI;
+>>>>>>> origin/julian
 
     private GameObject car;
 
@@ -20,11 +28,28 @@ public class FrontUI : MonoBehaviour {
     private float delta_rotation = 0.0f;
     private float max_rotation = 2.0f;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+    Vector3 last_pos;
+
+=======
     
+>>>>>>> develop
+=======
+    
+>>>>>>> origin/julian
     //**************************************************************************************************************************************************************
 
     void Start () {
         car = GameObject.FindGameObjectWithTag("PlayerCar");
+<<<<<<< HEAD
+<<<<<<< HEAD
+        last_pos = car.transform.position;
+
+=======
+>>>>>>> develop
+=======
+>>>>>>> origin/julian
         front_UI = GetComponent<Canvas>();
         
         steering_wheel = front_UI.transform.FindChild("SpriteWheel").GetComponent<Image>();
@@ -39,8 +64,20 @@ public class FrontUI : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     void Update () {
+<<<<<<< HEAD
+<<<<<<< HEAD
+        float speed = (car.transform.position - last_pos).magnitude / Variables.delta_t;
 
         rotation = Variables.steering_wheel;
+
+=======
+
+        rotation = Variables.steering_wheel;
+>>>>>>> develop
+=======
+
+        rotation = Variables.steering_wheel;
+>>>>>>> origin/julian
         rotation = rotation/max_rotation * 720 * 10;
 
         delta_rotation = sprite_rotation - rotation;
@@ -71,6 +108,16 @@ public class FrontUI : MonoBehaviour {
             wheel_text_R.gameObject.SetActive(false);
         }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+        wheel_speed.text = (int)(speed/3.6 * 10) + " Km/h";
+
+        last_pos = car.transform.position;
+=======
         wheel_speed.text = (int)Variables.speed + " Km/h";
+>>>>>>> develop
+=======
+        wheel_speed.text = (int)Variables.speed + " Km/h";
+>>>>>>> origin/julian
     }
 }

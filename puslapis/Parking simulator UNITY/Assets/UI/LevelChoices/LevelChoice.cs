@@ -13,19 +13,51 @@ public class LevelChoice : MonoBehaviour {
     private Vector2 button_size;
 
     private int space = 50;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    public int rows;
+    public int columns;
+=======
+    private int rows;
+    private int columns;
+>>>>>>> origin/julian
+=======
+    public int rows;
+    public int columns;
+>>>>>>> develop
+=======
     public int rows=3;
     public int columns=8;
+>>>>>>> Xellon/develop
     //**************************************************************************************************************************************************************
 
     void Start () {
         template = GameObject.Find("ButtonLevel");
 
         button_size = new Vector2(template.GetComponent<RectTransform>().rect.width, template.GetComponent<RectTransform>().rect.height);
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+        //rows = 3; //(int)(Screen.width / button_size.x + space);
+        //columns = 8; //(int)((Screen.height - 300) / button_size.y + space);
+=======
+        rows = 3;//(int)(Screen.width / button_size.x + space);
+        columns = 8;//(int)((Screen.height - 300) / button_size.y + space);
+>>>>>>> origin/julian
+=======
+        //rows = 3; //(int)(Screen.width / button_size.x + space);
+        //columns = 8; //(int)((Screen.height - 300) / button_size.y + space);
+>>>>>>> develop
+=======
+>>>>>>> Xellon/develop
         float left = (Screen.width - columns * (button_size.x + space) + button_size.x) / 2;
         float top = (Screen.height - rows * (button_size.y + space) + button_size.x) / 2;
         float height = Screen.height - top * 2;
         Debug.Log(Screen.width + "x" + Screen.height);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
         int button_count = 0;
 
         for (int y = 0; y < rows; y++) {
@@ -35,6 +67,23 @@ public class LevelChoice : MonoBehaviour {
                 button.transform.FindChild("Text").GetComponent<Text>().text = (button_count).ToString();
 
                 int id = button_count + Variables.starting_level;
+=======
+=======
+        int button_count = 0;
+
+>>>>>>> develop
+        for (int y = 0; y < rows; y++) {
+            for (int x = 0; x < columns; x++) {
+                GameObject button = Instantiate(template, new Vector3(left + x * (button_size.x + space), top + y * (button_size.y + space)), new Quaternion(), gameObject.transform);
+                button.name = "ButtonLevel" + button_count;
+                button.transform.FindChild("Text").GetComponent<Text>().text = (button_count).ToString();
+
+<<<<<<< HEAD
+                int id = y * rows + x + Variables.starting_level;
+>>>>>>> origin/julian
+=======
+                int id = button_count + Variables.starting_level;
+>>>>>>> develop
                 ColorBlock color = button.GetComponent<Button>().colors;
 
                 if (!String.IsNullOrEmpty(Variables.level_names[id])) {
@@ -55,8 +104,16 @@ public class LevelChoice : MonoBehaviour {
                     color.pressedColor = new Color32(0x00, 0x00, 0x00, 0x66); //00DFFF3C
                     button.GetComponent<Button>().colors = color;
                 }
+<<<<<<< HEAD
+<<<<<<< HEAD
 
                 button_count++;
+=======
+>>>>>>> origin/julian
+=======
+
+                button_count++;
+>>>>>>> develop
             }
         }
     }

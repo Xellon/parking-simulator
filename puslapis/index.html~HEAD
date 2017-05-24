@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Home page</title>
+	
+    <link rel="icon" href="Icon1.ico">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+	<link rel="stylesheet" type="text/css" href="style/index.css"/>
+</head>
+<body>
+	<a href="registracija.html"><button class="button">Registruotis</button>
+	<a href="prisijungimas.html"><button class="button">Prisijungti</button></a>
+	<div>
+		<p style="text-align: center;"><img src="style/tekstas.png" width="1200" height="500">
+
+		<a href="Build/index.html"><button class="button5" style="vertical-align:middle">PRADĖTI</button>
+	</div>
+</body>
+</html>
+
