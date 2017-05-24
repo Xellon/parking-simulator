@@ -32,6 +32,7 @@ public class Variables : MonoBehaviour {
         level_names[3] = "Intro";
         level_names[4] = "Tutorial1";
         level_names[5] = "Tutorial2";
+        level_names[6] = "Alley";
     }
 
     //**************************************************************************************************************************************************************
