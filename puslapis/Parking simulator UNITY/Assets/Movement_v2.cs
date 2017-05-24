@@ -13,7 +13,7 @@ public class Movement_v2 : MonoBehaviour {
     [Range(1, 60)]
     public int sukimo_kampas;
 
-    private string mode = "Arcade";
+    public static string mode = "Arcade";
     private bool parked = false;
 
     //Sounds
