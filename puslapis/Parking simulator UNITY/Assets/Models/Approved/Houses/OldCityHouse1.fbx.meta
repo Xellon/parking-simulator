@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5df8a0177f851d7429e9bd618be1962e
-timeCreated: 1495469725
+guid: 6c2a35d6a450c61459feaead7ae0407c
+timeCreated: 1495468356
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: RatasFL
+    4300000: Cube
   materials:
     importMaterials: 1
     materialName: 0
