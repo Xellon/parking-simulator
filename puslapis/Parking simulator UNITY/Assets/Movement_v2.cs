@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Movement_v2 : MonoBehaviour
-{
+using UnityEngine.SceneManagement;
+public class Movement_v2 : MonoBehaviour {
     private GameObject masina;
     private GameObject vairas;
     private WheelCollider[] wheel_colliders = new WheelCollider[4];
     private Transform[] wheel = new Transform[4];
 
-    [Range (1f,900f)]
+    [Range(1f, 900f)]
     public float stabdziu_galia;
     [Range(1, 60)]
     public int sukimo_kampas;
@@ -36,14 +35,14 @@ public class Movement_v2 : MonoBehaviour
     //**************************************************************************************************************************************************************
 
     void Start() {
-    vairas = GameObject.Find("Vairas");
-    //Ratu nustatymai
-    masina = GameObject.FindGameObjectWithTag("PlayerCar");
+        vairas = GameObject.Find("Vairas");
+        //Ratu nustatymai
+        masina = GameObject.FindGameObjectWithTag("PlayerCar");
         wheel_colliders[0] = GameObject.Find("RRcol").GetComponent<WheelCollider>();
         wheel_colliders[1] = GameObject.Find("RLcol").GetComponent<WheelCollider>();
         wheel_colliders[2] = GameObject.Find("FRcol").GetComponent<WheelCollider>();
         wheel_colliders[3] = GameObject.Find("FLcol").GetComponent<WheelCollider>();
-        
+
         wheel[0] = masina.transform.FindChild("RatasRR");
         wheel[1] = masina.transform.FindChild("RatasRL");
         wheel[2] = masina.transform.FindChild("RatasFR");
@@ -68,7 +67,7 @@ public class Movement_v2 : MonoBehaviour
 
     //**************************************************************************************************************************************************************
     void Update() {
-        Variables.speed = GetComponent<Rigidbody>().velocity.magnitude*3.6f;
+        Variables.speed = GetComponent<Rigidbody>().velocity.magnitude * 3.6f;
         if (!simulate) {
             setHorizontalAxis();
             setVerticalAxis();
@@ -84,15 +83,19 @@ public class Movement_v2 : MonoBehaviour
             audios.PlayOneShot(garsas_vaziavimo, volume);
             currentPlay = garsas_vaziavimo;
         }
-        if (currentPlay == garsas_stabdymo && Variables.speed < 2f)   {
+        if (currentPlay == garsas_stabdymo && Variables.speed < 2f) {
             audios.Stop();
             audios.PlayOneShot(garsas_vaziavimo, volume);
             currentPlay = garsas_vaziavimo;
         }
+<<<<<<< HEAD
+
+=======
         if (audios.isPlaying && currentPlay == garsas_vaziavimo)
             audios.pitch = 1 + Mathf.Abs(vertical_axis *0.2f) ;
+>>>>>>> refs/remotes/origin/develop
         ratuJudejimas();
-   
+
         float rotation_speed = 0;
         if (mode == "Precision") {
             Variables.steering_wheel += horizontal_axis * Variables.steering_speed * Variables.delta_t;
@@ -100,7 +103,7 @@ public class Movement_v2 : MonoBehaviour
                 Variables.steering_wheel = 0.2f;
             else if (Variables.steering_wheel < -0.2f)
                 Variables.steering_wheel = -0.2f;
-            
+
             wheel_colliders[3].steerAngle = sukimo_kampas * 5 * Variables.steering_wheel;
             wheel_colliders[2].steerAngle = sukimo_kampas * 5 * Variables.steering_wheel;
             if (Mathf.Abs(Variables.steering_wheel) < 0.2f && horizontal_axis != 0)
@@ -109,8 +112,8 @@ public class Movement_v2 : MonoBehaviour
         else if (mode == "Arcade") {
             rotation_speed = horizontal_axis * Variables.steering_speed * (Variables.speed <= 6.0f ? Variables.speed : 6.0f);
             Variables.steering_wheel = rotation_speed;
-            wheel_colliders[3].steerAngle = sukimo_kampas * Variables.steering_wheel*1.66f;
-            wheel_colliders[2].steerAngle = sukimo_kampas * Variables.steering_wheel*1.66f;
+            wheel_colliders[3].steerAngle = sukimo_kampas * Variables.steering_wheel * 1.66f;
+            wheel_colliders[2].steerAngle = sukimo_kampas * Variables.steering_wheel * 1.66f;
         }
 
         if (Variables.speed < 0.001 && horizontal_axis == 0 && vertical_axis == 0 && !simulate)
@@ -127,14 +130,21 @@ public class Movement_v2 : MonoBehaviour
 
         if (ParkingTrigger.trigger1 && ParkingTrigger.trigger2 && ParkingTrigger.trigger3 &&
             ParkingTrigger.trigger4 && ParkingTrigger.trigger5 && ParkingTrigger.trigger6 &&
+<<<<<<< HEAD
+            Variables.speed < 0.5) {
+=======
             Variables.speed < 0.1)
         {
+>>>>>>> refs/remotes/origin/develop
             if (currentPlay != garsas_parked)
                 audios.Stop();
             if (!audios.isPlaying && !simulate && currentPlay != garsas_parked)  {
                 currentPlay = garsas_parked;
                 audios.PlayOneShot(garsas_parked, volume * 5);
             }
+<<<<<<< HEAD
+            StartCoroutine("loadNext");
+=======
             else if (!audios.isPlaying && !simulate) {
                 level_id = Variables.current_level + 1;
                 if (level_id == 7)
@@ -142,6 +152,7 @@ public class Movement_v2 : MonoBehaviour
                 Debug.Log(level_id);
                 LevelChoice.startLevel(level_id);
             }
+>>>>>>> refs/remotes/origin/develop
         }
     }
 
@@ -156,9 +167,9 @@ public class Movement_v2 : MonoBehaviour
                 wheel_colliders[i].motorTorque -= 3 * vertical_axis + vertical_axis * Variables.acceleration * Variables.delta_t;
             }
             else if (Input.GetAxis("Vertical") == 0) {
-                    wheel_colliders[i].motorTorque = 0;
-                    wheel_colliders[i].brakeTorque = stabdziu_galia;
-              }
+                wheel_colliders[i].motorTorque = 0;
+                wheel_colliders[i].brakeTorque = stabdziu_galia;
+            }
             else {
                 wheel_colliders[i].motorTorque = 0;
                 wheel_colliders[i].brakeTorque = 0;
@@ -173,7 +184,7 @@ public class Movement_v2 : MonoBehaviour
             else
                 for (int q = 2; q < 4; q++)
                     wheel_colliders[q].brakeTorque = 0;
-            
+
         }
         ratuSukimasis();
     }
@@ -182,7 +193,7 @@ public class Movement_v2 : MonoBehaviour
     //Tam, kad galima butu simuliuot judejima tutorialuose
     public void setSimulate(bool choice) {
         simulate = choice;
-        if(choice)
+        if (choice)
             mode = "Precision";
         else
             mode = "Arcade";
@@ -230,8 +241,7 @@ public class Movement_v2 : MonoBehaviour
 
     //**************************************************************************************************************************************************************
 
-    public bool getParked()
-    {
+    public bool getParked() {
         return parked;
     }
 
@@ -239,8 +249,8 @@ public class Movement_v2 : MonoBehaviour
 
     void OnCollisionEnter(Collision collision) {
         if (!simulate)
-        audios.PlayOneShot(garsas_atsitrenkimo, volume*3);
-       
+            audios.PlayOneShot(garsas_atsitrenkimo, volume * 3);
+
 
     }
 
@@ -249,7 +259,15 @@ public class Movement_v2 : MonoBehaviour
     void vairoSukimas() {
         float x = Variables.delta_t / 0.0167f;
         if (Mathf.Abs(Variables.steering_wheel) != 0.2f)
-                 vairas.transform.Rotate(Vector3.up * horizontal_axis * Variables.steering_speed *60f * x);
+            vairas.transform.Rotate(Vector3.up * horizontal_axis * Variables.steering_speed * 60f * x);
     }
 
+    //**************************************************************************************************************************************************************
+
+    IEnumerator loadNext() {
+        yield return new WaitForSeconds(1.0f);
+        Variables.current_level++;
+        SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Single);
+        yield return null;
+    }
 }
