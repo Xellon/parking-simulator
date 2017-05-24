@@ -17,8 +17,6 @@ public class ParkingSpotGlow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(Vector3.Distance(transform.position, car.position));
-
         if(Vector3.Distance(transform.position, car.position) < no_glow_zone)
             glow.color = new Color(glow.color.r, glow.color.g, glow.color.b, 0.0f);
         else if (Vector3.Distance(transform.position, car.position) > safe_zone + no_glow_zone)
