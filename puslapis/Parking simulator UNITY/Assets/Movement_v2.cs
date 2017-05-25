@@ -111,7 +111,12 @@ public class Movement_v2 : MonoBehaviour {
         // Parking check
         if (ParkingTrigger.trigger1 && ParkingTrigger.trigger2 && ParkingTrigger.trigger3 &&
             ParkingTrigger.trigger4 && ParkingTrigger.trigger5 && ParkingTrigger.trigger6 &&
-            Variables.speed < 0.5) {
+            Variables.speed < 0.1) {
+
+            GameObject.Find("TutorialUI").transform.FindChild("TutorialWin").gameObject.SetActive(true);
+            GameObject.Find("TutorialUI").transform.FindChild("TutorialInfo").gameObject.SetActive(false);
+            GameObject.Find("TutorialUI").transform.FindChild("TutorialInstructions").gameObject.SetActive(false);
+           
             if (currentPlay != garsas_parked)
                 audios.Stop();
             if (!audios.isPlaying && !simulate) {
@@ -141,7 +146,7 @@ public class Movement_v2 : MonoBehaviour {
                 wheel_colliders[i].motorTorque = 0;
                 wheel_colliders[i].brakeTorque = 0;
             }
-            if (Input.GetButton("Break")) {
+            if (Input.GetButton("Break") && !simulate) {
                 if (Variables.speed > 1f) {
                     audios.PlayOneShot(garsas_stabdymo, volume);
                     currentPlay = garsas_stabdymo;
@@ -209,7 +214,7 @@ public class Movement_v2 : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     public bool getParked() {
-        return parked;
+          return parked;
     }
 
     //**************************************************************************************************************************************************************
@@ -232,7 +237,7 @@ public class Movement_v2 : MonoBehaviour {
     //**************************************************************************************************************************************************************
 
     IEnumerator loadNext() {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(4.0f);
         Variables.current_level++;
         SceneManager.LoadScene("LoadingScreen", LoadSceneMode.Single);
         yield return null;
