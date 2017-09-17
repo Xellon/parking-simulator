@@ -111,7 +111,7 @@ public class Movement_v2 : MonoBehaviour {
         // Parking check
         if (ParkingTrigger.trigger1 && ParkingTrigger.trigger2 && ParkingTrigger.trigger3 &&
             ParkingTrigger.trigger4 && ParkingTrigger.trigger5 && ParkingTrigger.trigger6 &&
-            Variables.speed < 0.1) {
+            Variables.speed < 0.1 && !simulate) {
 
             GameObject.Find("TutorialUI").transform.FindChild("TutorialWin").gameObject.SetActive(true);
             GameObject.Find("TutorialUI").transform.FindChild("TutorialInfo").gameObject.SetActive(false);
